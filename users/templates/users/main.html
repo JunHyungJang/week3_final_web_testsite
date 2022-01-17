@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     {% load static %}
-    {{member_data}}
+{#    {{ member_data }}#}
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
     <meta name="description" content=""/>
@@ -18,24 +18,34 @@
           type="text/css"/>
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href='{% static "css/styles.css" %}' rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@1,700&display=swap" rel="stylesheet">
+    <style>
+        @import url(//fonts.googleapis.com/earlyaccess/nanumgothic.css);
+    </style>
+
+
 </head>
 <body>
 <!-- Navigation-->
 <nav class="navbar navbar-light static-top" style="background-color: #232f46; height: 60px">
-    <div class="container">
+    <div id="container-upper" class="container">
         <a class="navbar-brand" href="#!">CS.GG</a>
-        <a class="btn btn-primary btn-sm" href="{% url 'users:login' %}">회원 가입</a>
-        <a class="btn btn-primary btn-sm" href="{% url 'users:index' %}">게시판</a>
-        <a class="btn btn-primary btn-sm" href="{% url 'users:logout' %}">로그아웃</a>
-
-        
-      
-
+        {#        <a class="btn btn-primary btn-sm" id="login_button" href="{% url 'users:login' %}">로그인</a>#}
+{#        <script>#}
+{#            if ({{ member_data }} == null#}
+{#            )#}
+{#            {#}
+{#                var login_button = `<a class="btn btn-primary btn-sm" id="login_button" href="{% url 'users:login' %}">로그인</a>`#}
+{#                $('#container').append(login_button)#}
+{#                console.log("reach")#}
+{#            }#}
+{#            console.log({{member_data}})#}
+{#        </script>#}
     </div>
 </nav>
 <!-- Masthead-->
 <header class="masthead">
-    <div class="container position-relative" id="container_main">
+    <div class="container position-relative" id="container_main" style="height:400px">
         <div class="row justify-content-center">
             <div class="col-xl-6">
                 <div class="text-center text-white">
@@ -96,6 +106,125 @@
         <div>&nbsp;&nbsp;&nbsp;&nbsp;</div>
         </body>
 
+        {#        <div>#}
+        {#            <div style="width: 50%; float:left">#}
+        {#                <table style="width:70%; table-layout:fixed; margin-left: 20%; margin-right: auto; border: 5px solid;"#}
+        {#                       id="on_game">#}
+        {#                    <tbody>#}
+        {#                    <tr>#}
+        {#                        <td style="background-color:#DDF;">#}
+        {#                            <div style="width:100%; height:20px; position:relative; border-top: 1px solid #eee; background-color: blue">#}
+        {#                            </div>#}
+        {#                            <div id="spec_s_l1"#}
+        {#                                 style="width:100%; height:43px; position:relative; border-top: 1px solid #eee;">#}
+        {#                                <div style="position:absolute; width:8px; height:40px; top:1px; right:-10px;">#}
+        {#                                </div>#}
+        {#                                <p style="font-family:'Ubuntu', sans-serif; margin-top: 8px; margin-left: 30px; font-size: 17px">#}
+        {#                                    Top#}
+        {#                                </p>#}
+        {#                                <div style="position:absolute; top:5px; right:0px;">#}
+        {#                                    <input type="text" name="text" size="20">#}
+        {#                                </div>#}
+        {#                            </div>#}
+        {#                            <div id="spec_s_l1"#}
+        {#                                 style="width:100%; height:43px; position:relative; border-top: 1px solid #eee;">#}
+        {#                                <div style="position:absolute; width:8px; height:40px; top:1px; right:-10px;">#}
+        {#                                </div>#}
+        {#                                <div style="position:absolute; top:5px; right:0px;">#}
+        {#                                    <input type="text" name="text" size="20">#}
+        {#                                </div>#}
+        {#                            </div>#}
+        {#                            <div id="spec_s_l1"#}
+        {#                                 style="width:100%; height:43px; position:relative; border-top: 1px solid #eee;">#}
+        {#                                <div style="position:absolute; width:8px; height:40px; top:1px; right:-10px;">#}
+        {#                                </div>#}
+        {#                                <div style="position:absolute; top:5px; right:0px;">#}
+        {#                                    <input type="text" name="text" size="20">#}
+        {#                                </div>#}
+        {#                            </div>#}
+        {#                            <div id="spec_s_l1"#}
+        {#                                 style="width:100%; height:43px; position:relative; border-top: 1px solid #eee;">#}
+        {#                                <div style="position:absolute; width:8px; height:40px; top:1px; right:-10px;">#}
+        {#                                </div>#}
+        {#                                <div style="position:absolute; top:5px; right:0px;">#}
+        {#                                    <input type="text" name="text" size="20">#}
+        {#                                </div>#}
+        {#                            </div>#}
+        {#                            <div id="spec_s_l1"#}
+        {#                                 style="width:100%; height:43px; position:relative; border-top: 1px solid #eee;">#}
+        {#                                <div style="position:absolute; width:8px; height:40px; top:1px; right:-10px;">#}
+        {#                                </div>#}
+        {#                                <div style="position:absolute; top:5px; right:0px;">#}
+        {#                                    <input type="text" name="text" size="20">#}
+        {#                                </div>#}
+        {#                            </div>#}
+        {#                        </td>#}
+        {#                    </tr>#}
+        {#                    </tbody>#}
+        {#                </table>#}
+        {#            </div>#}
+        {#            <div style="width: 50%; float:right">#}
+        {#                <table style="width:70%; table-layout:fixed; margin-left: auto; margin-right: 20%; border: 5px solid;"#}
+        {#                       id="on_game">#}
+        {#                    <tbody>#}
+        {#                    </td>#}
+        {#                    <td style="background-color:#EDF;">#}
+        {#                        <div style="width:100%; height:20px; position:relative; border-top: 1px solid #eee; background-color: red">#}
+        {#                        </div>#}
+        {#                        <div id="spec_s_r1"#}
+        {#                             style="width:100%; height:43px; position:relative; border-top: 1px solid #eee;">#}
+        {#                            <div style="position:absolute; width:8px; height:40px; top:1px; left:-10px;">#}
+        {#                            </div>#}
+        {#                            <div style="position:absolute; top:5px; left:0px;">#}
+        {#                                <input type="text" name="text" size="20">#}
+        {#                            </div>#}
+        {#                        </div>#}
+        {#                        <div id="spec_s_r1"#}
+        {#                             style="width:100%; height:43px; position:relative; border-top: 1px solid #eee;">#}
+        {#                            <div style="position:absolute; width:8px; height:40px; top:1px; left:-10px;">#}
+        {#                            </div>#}
+        {#                            <div style="position:absolute; top:5px; left:0px;">#}
+        {#                                <input type="text" name="text" size="20">#}
+        {#                            </div>#}
+        {#                        </div>#}
+        {#                        <div id="spec_s_r1"#}
+        {#                             style="width:100%; height:43px; position:relative; border-top: 1px solid #eee;">#}
+        {#                            <div style="position:absolute; width:8px; height:40px; top:1px; left:-10px;">#}
+        {#                            </div>#}
+        {#                            <div style="position:absolute; top:5px; left:0px;">#}
+        {#                                <input type="text" name="text" size="20">#}
+        {#                            </div>#}
+        {#                        </div>#}
+        {#                        <div id="spec_s_r1"#}
+        {#                             style="width:100%; height:43px; position:relative; border-top: 1px solid #eee;">#}
+        {#                            <div style="position:absolute; width:8px; height:40px; top:1px; left:-10px;">#}
+        {#                            </div>#}
+        {#                            <div style="position:absolute; top:5px; left:0px;">#}
+        {#                                <input type="text" name="text" size="20">#}
+        {#                            </div>#}
+        {#                        </div>#}
+        {#                        <div id="spec_s_r1"#}
+        {#                             style="width:100%; height:43px; position:relative; border-top: 1px solid #eee;">#}
+        {#                            <div style="position:absolute; width:8px; height:40px; top:1px; left:-10px;">#}
+        {#                            </div>#}
+        {#                            <div style="position:absolute; top:5px; left:0px;">#}
+        {#                                <input type="text" name="text" size="20">#}
+        {#                            </div>#}
+        {#                        </div>#}
+        {#                    </td>#}
+        {##}
+        {#                    </tbody>#}
+        {#                </table>#}
+        {#            </div>#}
+        {#            <div>&nbsp;</div>#}
+        {#            <div>&nbsp;</div>#}
+        {#            <div class="button-1" id="search_button" style="float: right; margin-right: 150px">#}
+        {#                <div class="eff-1"></div>#}
+        {#                <a href="#"> GG! </a>#}
+        {#            </div>#}
+        {#        </div>#}
+
+
     </div>
 </header>
 <!-- Icons Grid-->
@@ -104,23 +233,27 @@
         <div class="row">
             <div class="col-lg-4">
                 <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
-                    <div class="features-icons-icon d-flex"><i class="bi-window m-auto text-primary"></i></div>
-                    <h3>Fully Responsive</h3>
-                    <p class="lead mb-0">This theme will look great on any device, no matter the size!</p>
+                    <div class="features-icons-icon d-flex"><a href='{% url 'users:index' %}'
+                                                               style="margin-left: auto; margin-right: auto"><i
+                            class="bi-window m-auto text-primary" style="text-align: center"></i></a></div>
+                    <h3>게시판</h3>
+                    {#                    <p class="lead mb-0">This theme will look great on any device, no matter the size!</p>#}
                 </div>
             </div>
             <div class="col-lg-4">
                 <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
                     <div class="features-icons-icon d-flex"><i class="bi-layers m-auto text-primary"></i></div>
-                    <h3>Bootstrap 5 Ready</h3>
-                    <p class="lead mb-0">Featuring the latest build of the new Bootstrap 5 framework!</p>
+                    <h3>챔피언 조합기</h3>
+                    {#                    <p class="lead mb-0">Featuring the latest build of the new Bootstrap 5 framework!</p>#}
                 </div>
             </div>
             <div class="col-lg-4">
                 <div class="features-icons-item mx-auto mb-0 mb-lg-3">
-                    <div class="features-icons-icon d-flex"><i class="bi-terminal m-auto text-primary"></i></div>
-                    <h3>Easy to Use</h3>
-                    <p class="lead mb-0">Ready to use with your own content, or customize the source files!</p>
+                    <div class="features-icons-icon d-flex"><a href="http://www.naver.com"
+                                                               style="margin-left: auto; margin-right: auto"><i
+                            class="bi-terminal m-auto text-primary"></i></a></div>
+                    <h3>챔피언 추천</h3>
+                    {#                    <p class="lead mb-0">Ready to use with your own content, or customize the source files!</p>#}
                 </div>
             </div>
         </div>
@@ -129,10 +262,127 @@
 <!-- Image Showcases-->
 <section class="showcase">
     <div class="container-fluid p-0">
-
+        {#        <div class="row g-0">#}
+        {#            <div class="col-lg-6 order-lg-2 text-white showcase-img"#}
+        {#                 style="background-image: url('{% static "assets/img/bg-showcase-1.jpg" %}')"></div>#}
+        {#            <div class="col-lg-6 order-lg-1 my-auto showcase-text">#}
+        {#                <h2>Fully Responsive Design</h2>#}
+        {#                <p class="lead mb-0">When you use a theme created by Start Bootstrap, you know that the theme will look#}
+        {#                    great on any device, whether it's a phone, tablet, or desktop the page will behave responsively!</p>#}
+        {#            </div>#}
+        {#        </div>#}
+        {#        <div class="row g-0">#}
+        {#            <div class="col-lg-6 text-white showcase-img"#}
+        {#                 style="background-image: url('{% static "assets/img/bg-showcase-2.jpg" %}')"></div>#}
+        {#            <div class="col-lg-6 my-auto showcase-text">#}
+        {#                <h2>Updated For Bootstrap 5</h2>#}
+        {#                <p class="lead mb-0">Newly improved, and full of great utility classes, Bootstrap 5 is leading the way#}
+        {#                    in mobile responsive web development! All of the themes on Start Bootstrap are now using Bootstrap#}
+        {#                    5!</p>#}
+        {#            </div>#}
+        {#        </div>#}
+        {#        <div class="row g-0">#}
+        {#            <div class="col-lg-6 order-lg-2 text-white showcase-img"#}
+        {#                 style="background-image: url('{% static "assets/img/bg-showcase-3.jpg" %}')"></div>#}
+        {#            <div class="col-lg-6 order-lg-1 my-auto showcase-text">#}
+        {#                <h2>Easy to Use & Customize</h2>#}
+        {#                <p class="lead mb-0">Landing Page is just HTML and CSS with a splash of SCSS for users who demand some#}
+        {#                    deeper customization options. Out of the box, just add your content and images, and your new landing#}
+        {#                    page will be ready to go!</p>#}
+        {#            </div>#}
+        {#        </div>#}
     </div>
 </section>
-
+<!-- Testimonials-->
+{#<section class="testimonials text-center bg-light">#}
+{#    <div class="container">#}
+{#        <h2 class="mb-5">What people are saying...</h2>#}
+{#        <div class="row">#}
+{#            <div class="col-lg-4">#}
+{#                <div class="testimonial-item mx-auto mb-5 mb-lg-0">#}
+{#                    <img class="img-fluid rounded-circle mb-3" src='{% static "assets/img/testimonials-1.jpg" %}'#}
+{#                         alt="..."/>#}
+{#                    <h5>Margaret E.</h5>#}
+{#                    <p class="font-weight-light mb-0">"This is fantastic! Thanks so much guys!"</p>#}
+{#                </div>#}
+{#            </div>#}
+{#            <div class="col-lg-4">#}
+{#                <div class="testimonial-item mx-auto mb-5 mb-lg-0">#}
+{#                    <img class="img-fluid rounded-circle mb-3" src='{% static "assets/img/testimonials-2.jpg" %}'#}
+{#                         alt="..."/>#}
+{#                    <h5>Fred S.</h5>#}
+{#                    <p class="font-weight-light mb-0">"Bootstrap is amazing. I've been using it to create lots of super#}
+{#                        nice landing pages."</p>#}
+{#                </div>#}
+{#            </div>#}
+{#            <div class="col-lg-4">#}
+{#                <div class="testimonial-item mx-auto mb-5 mb-lg-0">#}
+{#                    <img class="img-fluid rounded-circle mb-3" src='{% static "assets/img/testimonials-3.jpg" %}'#}
+{#                         alt="..."/>#}
+{#                    <h5>Sarah W.</h5>#}
+{#                    <p class="font-weight-light mb-0">"Thanks so much for making these free resources available to#}
+{#                        us!"</p>#}
+{#                </div>#}
+{#            </div>#}
+{#        </div>#}
+{#    </div>#}
+{#</section>#}
+{#<!-- Call to Action-->#}
+{#<section class="call-to-action text-white text-center" id="signup">#}
+{#    <div class="container position-relative">#}
+{#        <div class="row justify-content-center">#}
+{#            <div class="col-xl-6">#}
+{#                <h2 class="mb-4">Ready to get started? Sign up now!</h2>#}
+{#                <!-- Signup form-->#}
+{#                <!-- * * * * * * * * * * * * * * *-->#}
+{#                <!-- * * SB Forms Contact Form * *-->#}
+{#                <!-- * * * * * * * * * * * * * * *-->#}
+{#                <!-- This form is pre-integrated with SB Forms.-->#}
+{#                <!-- To make this form functional, sign up at-->#}
+{#                <!-- https://startbootstrap.com/solution/contact-forms-->#}
+{#                <!-- to get an API token!-->#}
+{#                <form class="form-subscribe" id="contactFormFooter"#}
+{#                      data-sb-form-api-token="d022010c-bb19-4fee-ad81-12fa3a18184a">#}
+{#                    <!-- Email address input-->#}
+{#                    <div class="row">#}
+{#                        <div class="col">#}
+{#                            <input class="form-control form-control-lg" id="emailAddressBelow" type="email"#}
+{#                                   placeholder="Email Address" data-sb-validations="required,email"/>#}
+{#                            <div class="invalid-feedback text-white" data-sb-feedback="emailAddressBelow:required">Email#}
+{#                                Address is required.#}
+{#                            </div>#}
+{#                            <div class="invalid-feedback text-white" data-sb-feedback="emailAddressBelow:email">Email#}
+{#                                Address Email is not valid.#}
+{#                            </div>#}
+{#                        </div>#}
+{#                        <div class="col-auto">#}
+{#                            <button class="btn btn-primary btn-lg disabled" id="submitButton" type="submit">GG</button>#}
+{#                        </div>#}
+{#                    </div>#}
+{#                    <!-- Submit success message-->#}
+{#                    <!---->#}
+{#                    <!-- This is what your users will see when the form-->#}
+{#                    <!-- has successfully submitted-->#}
+{#                    <div class="d-none" id="submitSuccessMessage">#}
+{#                        <div class="text-center mb-3">#}
+{#                            <div class="fw-bolder">Form submission successful!</div>#}
+{#                            <p>To activate this form, sign up at</p>#}
+{#                            <a class="text-white" href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>#}
+{#                        </div>#}
+{#                    </div>#}
+{#                    <!-- Submit error message-->#}
+{#                    <!---->#}
+{#                    <!-- This is what your users will see when there is-->#}
+{#                    <!-- an error submitting the form-->#}
+{#                    <div class="d-none" id="submitErrorMessage">#}
+{#                        <div class="text-center text-danger mb-3">Error sending message!</div>#}
+{#                    </div>#}
+{#                </form>#}
+{#            </div>#}
+{#        </div>#}
+{#    </div>#}
+{#</section>#}
+<!-- Footer-->
 <footer class="footer bg-light">
     <div class="container">
         <div class="row">
@@ -177,145 +427,402 @@
 
 <!-- javascript -->
 <script>
-    var html = `<table style="width:50%; table-layout:fixed; margin-left: auto; margin-right: auto; border: 5px solid" id="on_game">
-            <tbody>
-            <tr>
-                <td style="background-color:#DDF;">
-                    <div id="spec_s_l1"
-                         style="width:100%; height:43px; position:relative; border-top: 1px solid #eee;">
-                        <div style="position:absolute; width:8px; height:40px; top:1px; right:-10px;">
+    var id_1
+    var idlist;
+    var champlist;
+    var champImgList;
+    var user_defined_champ_list = [];
+
+    if('{{ member_data }}' == 'null'){
+        var login_button = `<a class="btn btn-primary btn-sm" id="login_button" href="{% url 'users:login' %}">로그인</a>`
+        $('#container-upper').append(login_button);
+        console.log("reach");
+    }
+    if ('{{ member_data }}' != 'null'){
+        var login_button = `<a class="btn btn-primary btn-sm" id="login_button" href="{% url 'users:logout' %}">로그아웃</a>`
+        $('#container-upper').append(login_button);
+        console.log("reach2");
+    }
+
+    $('.bi-layers').click(function () {
+        $('div').remove("#analyze_text")
+        $('div').remove("#analyze_text_error")
+        $("div").remove("#on_game_data")
+        $("table").remove("#on_game")
+        $("div").remove("#user_defined_game")
+
+
+        var input_game = `<div id="user_defined_game">
+            <div style="width: 50%; float:left">
+                <table style="width:70%; table-layout:fixed; margin-left: 20%; margin-right: auto; border: 5px solid;"
+                       id="on_game">
+                    <tbody>
+                    <tr>
+                        <td style="background-color:#DDF;">
+                            <div style="width:100%; height:20px; position:relative; border-top: 1px solid #eee; background-color: blue">
+                            </div>
+                            <div id="spec_s_l1"
+                                 style="width:100%; height:43px; position:relative; border-top: 1px solid #eee;">
+                                <div style="position:absolute; width:8px; height:40px; top:1px; right:-10px;">
+                                </div>
+                                <div style="position:absolute; top:5px; right:0px;">
+                                    <input id="champ1" type="text" name="text" size="20">
+                                </div>
+                                <p style="font-family:'Ubuntu', sans-serif; margin-top: 8px; margin-left: 30px; font-size: 17px">
+                                    Top
+                                </p>
+                            </div>
+                            <div id="spec_s_l1"
+                                 style="width:100%; height:43px; position:relative; border-top: 1px solid #eee;">
+                                <div style="position:absolute; width:8px; height:40px; top:1px; right:-10px;">
+                                </div>
+                                <div style="position:absolute; top:5px; right:0px;">
+                                    <input id="champ2" type="text" name="text" size="20">
+                                </div>
+                                <p style="font-family:'Ubuntu', sans-serif; margin-top: 8px; margin-left: 30px; font-size: 17px">
+                                    Jungle
+                                </p>
+                            </div>
+                            <div id="spec_s_l1"
+                                 style="width:100%; height:43px; position:relative; border-top: 1px solid #eee;">
+                                <div style="position:absolute; width:8px; height:40px; top:1px; right:-10px;">
+                                </div>
+                                <div style="position:absolute; top:5px; right:0px;">
+                                    <input id="champ3" type="text" name="text" size="20">
+                                </div>
+                                <p style="font-family:'Ubuntu', sans-serif; margin-top: 8px; margin-left: 30px; font-size: 17px">
+                                    Mid
+                                </p>
+                            </div>
+                            <div id="spec_s_l1"
+                                 style="width:100%; height:43px; position:relative; border-top: 1px solid #eee;">
+                                <div style="position:absolute; width:8px; height:40px; top:1px; right:-10px;">
+                                </div>
+                                <div style="position:absolute; top:5px; right:0px;">
+                                    <input id="champ4" type="text" name="text" size="20">
+                                </div>
+                                <p style="font-family:'Ubuntu', sans-serif; margin-top: 8px; margin-left: 30px; font-size: 17px">
+                                    Adc
+                                </p>
+                            </div>
+                            <div id="spec_s_l1"
+                                 style="width:100%; height:43px; position:relative; border-top: 1px solid #eee;">
+                                <div style="position:absolute; width:8px; height:40px; top:1px; right:-10px;">
+                                </div>
+                                <div style="position:absolute; top:5px; right:0px;">
+                                    <input id="champ5" type="text" name="text" size="20">
+                                </div>
+                                <p style="font-family:'Ubuntu', sans-serif; margin-top: 8px; margin-left: 30px; font-size: 17px">
+                                    Support
+                                </p>
+                            </div>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div style="width: 50%; float:right">
+                <table style="width:70%; table-layout:fixed; margin-left: auto; margin-right: 20%; border: 5px solid;"
+                       id="on_game">
+                    <tbody>
+                    </td>
+                    <td style="background-color:#EDF;">
+                        <div style="width:100%; height:20px; position:relative; border-top: 1px solid #eee; background-color: red">
                         </div>
-                        <div class="show_spec_rune tipsy_live"
-                             style="position:absolute; top:0px; right:0px;">
-                            <img src="//z.fow.kr/champ/887.png" width="40" alt="">
+                        <div id="spec_s_r1"
+                             style="width:100%; height:43px; position:relative; border-top: 1px solid #eee;">
+                            <div style="position:absolute; width:8px; height:40px; top:1px; left:-10px;">
+                            </div>
+                            <div style="position:absolute; top:5px; left:0px;">
+                                <input id="champ6" type="text" name="text" size="20">
+                            </div>
+                            <p style="font-family:'Ubuntu', sans-serif; margin-top: 8px; margin-left: 390px; font-size: 17px">
+                                    Top
+                            </p>
                         </div>
-                        <div style="position:absolute; top:2px; right:65px; text-align:right; color:gray; line-height:13px;">
-                            <b><a class="spec_list_name nanum" style="color:black;">neineineinei</a></b>
+                        <div id="spec_s_r1"
+                             style="width:100%; height:43px; position:relative; border-top: 1px solid #eee;">
+                            <div style="position:absolute; width:8px; height:40px; top:1px; left:-10px;">
+                            </div>
+                            <div style="position:absolute; top:5px; left:0px;">
+                                <input id="champ7" type="text" name="text" size="20">
+                            </div>
+                            <p style="font-family:'Ubuntu', sans-serif; margin-top: 8px; margin-left: 365px; font-size: 17px">
+                                    Jungle
+                            </p>
                         </div>
-                    </div>
-                    <div id="spec_s_l1"
-                         style="width:100%; height:43px; position:relative; border-top: 1px solid #eee;">
-                        <div style="position:absolute; width:8px; height:40px; top:1px; right:-10px;">
+                        <div id="spec_s_r1"
+                             style="width:100%; height:43px; position:relative; border-top: 1px solid #eee;">
+                            <div style="position:absolute; width:8px; height:40px; top:1px; left:-10px;">
+                            </div>
+                            <div style="position:absolute; top:5px; left:0px;">
+                                <input id="champ8" type="text" name="text" size="20">
+                            </div>
+                            <p style="font-family:'Ubuntu', sans-serif; margin-top: 8px; margin-left: 390px; font-size: 17px">
+                                    Mid
+                            </p>
                         </div>
-                        <div class="show_spec_rune tipsy_live"
-                             style="position:absolute; top:0px; right:0px;">
-                            <img src="//z.fow.kr/champ/887.png" width="40" alt="">
+                        <div id="spec_s_r1"
+                             style="width:100%; height:43px; position:relative; border-top: 1px solid #eee;">
+                            <div style="position:absolute; width:8px; height:40px; top:1px; left:-10px;">
+                            </div>
+                            <div style="position:absolute; top:5px; left:0px;">
+                                <input id="champ9" type="text" name="text" size="20">
+                            </div>
+                            <p style="font-family:'Ubuntu', sans-serif; margin-top: 8px; margin-left: 390px; font-size: 17px">
+                                    Adc
+                            </p>
                         </div>
-                        <div style="position:absolute; top:2px; right:65px; text-align:right; color:gray; line-height:13px;">
-                            <b><a class="spec_list_name nanum" style="color:black;">neineineinei</a></b>
+                        <div id="spec_s_r1"
+                             style="width:100%; height:43px; position:relative; border-top: 1px solid #eee;">
+                            <div style="position:absolute; width:8px; height:40px; top:1px; left:-10px;">
+                            </div>
+                            <div style="position:absolute; top:5px; left:0px;">
+                                <input id="champ10" type="text" name="text" size="20">
+                            </div>
+                            <p style="font-family:'Ubuntu', sans-serif; margin-top: 8px; margin-left: 360px; font-size: 17px">
+                                    Support
+                            </p>
                         </div>
-                    </div>
-                    <div id="spec_s_l1"
-                         style="width:100%; height:43px; position:relative; border-top: 1px solid #eee;">
-                        <div style="position:absolute; width:8px; height:40px; top:1px; right:-10px;">
-                        </div>
-                        <div class="show_spec_rune tipsy_live"
-                             style="position:absolute; top:0px; right:0px;">
-                            <img src="//z.fow.kr/champ/887.png" width="40" alt="">
-                        </div>
-                        <div style="position:absolute; top:2px; right:65px; text-align:right; color:gray; line-height:13px;">
-                            <b><a class="spec_list_name nanum" style="color:black;">neineineinei</a></b>
-                        </div>
-                    </div>
-                    <div id="spec_s_l1"
-                         style="width:100%; height:43px; position:relative; border-top: 1px solid #eee;">
-                        <div style="position:absolute; width:8px; height:40px; top:1px; right:-10px;">
-                        </div>
-                        <div class="show_spec_rune tipsy_live"
-                             style="position:absolute; top:0px; right:0px;">
-                            <img src="//z.fow.kr/champ/887.png" width="40" alt="">
-                        </div>
-                        <div style="position:absolute; top:2px; right:65px; text-align:right; color:gray; line-height:13px;">
-                            <b><a class="spec_list_name nanum" style="color:black;">neineineinei</a></b>
-                        </div>
-                    </div>
-                    <div id="spec_s_l1"
-                         style="width:100%; height:43px; position:relative; border-top: 1px solid #eee;">
-                        <div style="position:absolute; width:8px; height:40px; top:1px; right:-10px;">
-                        </div>
-                        <div class="show_spec_rune tipsy_live"
-                             style="position:absolute; top:0px; right:0px;">
-                            <img src="//z.fow.kr/champ/887.png" width="40" alt="">
-                        </div>
-                        <div style="position:absolute; top:2px; right:65px; text-align:right; color:gray; line-height:13px;">
-                            <b><a class="spec_list_name nanum" style="color:black;">neineineinei</a></b>
-                        </div>
-                    </div>
-                </td>
-                <td style="width:15%; text-align:center; background-color:#EEE;">
-                </td>
-                <td style="background-color:#EDF;">
-                    <div id="spec_s_r1"
-                         style="width:100%; height:43px; position:relative; border-top: 1px solid #eee;">
-                        <div style="position:absolute; width:8px; height:40px; top:1px; left:-10px;">
-                        </div>
-                        <div class="show_spec_rune tipsy_live"
-                             style="position:absolute; top:0px; left:0px;" original-title="">
-                            <img src="//z.fow.kr/champ/78.png" width="40" alt="">
-                        </div>
-                        <div style="position:absolute; top:2px; left:65px; color:gray; line-height:13px;">
-                            <b><a class="spec_list_name nanum" style="color:black;">칼과 창 방패</a></b><br>
-                        </div>
-                    </div>
-                    <div id="spec_s_r1"
-                         style="width:100%; height:43px; position:relative; border-top: 1px solid #eee;">
-                        <div style="position:absolute; width:8px; height:40px; top:1px; left:-10px;">
-                        </div>
-                        <div class="show_spec_rune tipsy_live"
-                             style="position:absolute; top:0px; left:0px;" original-title="">
-                            <img src="//z.fow.kr/champ/78.png" width="40" alt="">
-                        </div>
-                        <div style="position:absolute; top:2px; left:65px; color:gray; line-height:13px;">
-                            <b><a class="spec_list_name nanum" style="color:black;">칼과 창 방패</a></b><br>
-                        </div>
-                    </div>
-                    <div id="spec_s_r1"
-                         style="width:100%; height:43px; position:relative; border-top: 1px solid #eee;">
-                        <div style="position:absolute; width:8px; height:40px; top:1px; left:-10px;">
-                        </div>
-                        <div class="show_spec_rune tipsy_live"
-                             style="position:absolute; top:0px; left:0px;" original-title="">
-                            <img src="//z.fow.kr/champ/78.png" width="40" alt="">
-                        </div>
-                        <div style="position:absolute; top:2px; left:65px; color:gray; line-height:13px;">
-                            <b><a class="spec_list_name nanum" style="color:black;">칼과 창 방패</a></b><br>
-                        </div>
-                    </div>
-                    <div id="spec_s_r1"
-                         style="width:100%; height:43px; position:relative; border-top: 1px solid #eee;">
-                        <div style="position:absolute; width:8px; height:40px; top:1px; left:-10px;">
-                        </div>
-                        <div class="show_spec_rune tipsy_live"
-                             style="position:absolute; top:0px; left:0px;" original-title="">
-                            <img src="//z.fow.kr/champ/78.png" width="40" alt="">
-                        </div>
-                        <div style="position:absolute; top:2px; left:65px; color:gray; line-height:13px;">
-                            <b><a class="spec_list_name nanum" style="color:black;">칼과 창 방패</a></b><br>
-                        </div>
-                    </div>
-                    <div id="spec_s_r1"
-                         style="width:100%; height:43px; position:relative; border-top: 1px solid #eee;">
-                        <div style="position:absolute; width:8px; height:40px; top:1px; left:-10px;">
-                        </div>
-                        <div class="show_spec_rune tipsy_live"
-                             style="position:absolute; top:0px; left:0px;" original-title="">
-                            <img src="//z.fow.kr/champ/78.png" width="40" alt="">
-                        </div>
-                        <div style="position:absolute; top:2px; left:65px; color:gray; line-height:13px;">
-                            <b><a class="spec_list_name nanum" style="color:black;">칼과 창 방패</a></b><br>
-                        </div>
-                    </div>
-                </td>
-            </tr>
-            </tbody>
-        </table>`
+                    </td>
+
+                    </tbody>
+                </table>
+            </div>
+            <div>&nbsp;</div>
+            <div>&nbsp;</div>
+            <div class="button-1" id="search_button2" style="float: right; margin-right: 150px">
+                <div class="eff-1"></div>
+                <a href="#"> GG! </a>
+            </div>
+        </div>`
+        $('#container_main').append(input_game)
+    })
+
+    $('#container_main').on('click', '.button-1', function () {
+        console.log("clicked")
+        user_defined_champ_list = []
+        user_defined_champ_list.push($('#champ1').val());
+        user_defined_champ_list.push($('#champ2').val());
+        user_defined_champ_list.push($('#champ3').val());
+        user_defined_champ_list.push($('#champ4').val());
+        user_defined_champ_list.push($('#champ5').val());
+        user_defined_champ_list.push($('#champ6').val());
+        user_defined_champ_list.push($('#champ7').val());
+        user_defined_champ_list.push($('#champ8').val());
+        user_defined_champ_list.push($('#champ9').val());
+        user_defined_champ_list.push($('#champ10').val());
+
+        console.log(user_defined_champ_list);
+    })
 
     $('#search_button').click(function () {
         console.log("clicked")
         console.log($('#emailAddress').val())
+
+        let fd = new FormData();
+        fd.append("userId", $('#emailAddress').val())
+
+        var text = '<div class="text-center text-white" id="analyze_text"> <div>&nbsp;</div> <div>&nbsp;</div> <div>&nbsp;</div> <div>&nbsp;</div> <div>&nbsp;</div> <h3 class="mb-5">분석중...</h3> </div>'
+
+        $('div').remove("#analyze_text")
+        $('div').remove("#analyze_text_error")
+        $("div").remove("#on_game_data")
         $("table").remove("#on_game")
-        $('#container_main').append(html)
-    });
+        $("div").remove("#user_defined_game")
+        $('#container_main').append(text)
+
+        $.ajax({
+            url: "http://127.0.0.1:8000/content/",
+            data: fd,
+            type: "POST",
+            processData: false,
+            contentType: false,
+            success: function (data) {
+                idlist = data[0];
+                champlist = data[1];
+                champImgList = data[2];
+                console.log(id_1)
+                console.log(idlist);
+                console.log(champImgList);
+
+                var html = `<div id="on_game_data">
+            <div style="width: 50%; float:left">
+                <table style="width:70%; table-layout:fixed; margin-left: 20%; margin-right: auto; border: 5px solid;"
+                       id="on_game">
+                    <tbody>
+                    <tr>
+                        <td style="background-color:#DDF;">
+                            <div style="width:100%; height:20px; position:relative; border-top: 1px solid #eee; background-color: #3b3bf6">
+                            </div>
+                            <div id="spec_s_l1"
+                                 style="width:100%; height:43px; position:relative; border-top: 1px solid #eee;">
+                                <div style="position:absolute; width:8px; height:40px; top:1px; right:-10px;">
+                                </div>
+                                <div class="show_spec_rune tipsy_live"
+                                     style="position:absolute; top:0px; right:0px;">
+                                    <img src=${champImgList[0]} width="40" alt="">
+                                </div>
+                                <div style="position:absolute; top:2px; right:65px; text-align:right; color:gray; line-height:30px;">
+                                    <b><a class="spec_list_name nanum" style="color:black;">${idlist[0]}</a></b>
+                                </div>
+                            </div>
+                            <div id="spec_s_l1"
+                                 style="width:100%; height:43px; position:relative; border-top: 1px solid #eee;">
+                                <div style="position:absolute; width:8px; height:40px; top:1px; right:-10px;">
+                                </div>
+                                <div class="show_spec_rune tipsy_live"
+                                     style="position:absolute; top:0px; right:0px;">
+                                    <img src=${champImgList[1]} width="40" alt="">
+                                </div>
+                                <div style="position:absolute; top:2px; right:65px; text-align:right; color:gray; line-height:30px;">
+                                    <b><a class="spec_list_name nanum" style="color:black;">${idlist[1]}</a></b>
+                                </div>
+                            </div>
+                            <div id="spec_s_l1"
+                                 style="width:100%; height:43px; position:relative; border-top: 1px solid #eee;">
+                                <div style="position:absolute; width:8px; height:40px; top:1px; right:-10px;">
+                                </div>
+                                <div class="show_spec_rune tipsy_live"
+                                     style="position:absolute; top:0px; right:0px;">
+                                    <img src=${champImgList[2]} width="40" alt="">
+                                </div>
+                                <div style="position:absolute; top:2px; right:65px; text-align:right; color:gray; line-height:30px;">
+                                    <b><a class="spec_list_name nanum" style="color:black;">${idlist[2]}</a></b>
+                                </div>
+                            </div>
+                            <div id="spec_s_l1"
+                                 style="width:100%; height:43px; position:relative; border-top: 1px solid #eee;">
+                                <div style="position:absolute; width:8px; height:40px; top:1px; right:-10px;">
+                                </div>
+                                <div class="show_spec_rune tipsy_live"
+                                     style="position:absolute; top:0px; right:0px;">
+                                    <img src=${champImgList[3]} width="40" alt="">
+                                </div>
+                                <div style="position:absolute; top:2px; right:65px; text-align:right; color:gray; line-height:30px;">
+                                    <b><a class="spec_list_name nanum" style="color:black;">${idlist[3]}</a></b>
+                                </div>
+                            </div>
+                            <div id="spec_s_l1"
+                                 style="width:100%; height:43px; position:relative; border-top: 1px solid #eee;">
+                                <div style="position:absolute; width:8px; height:40px; top:1px; right:-10px;">
+                                </div>
+                                <div class="show_spec_rune tipsy_live"
+                                     style="position:absolute; top:0px; right:0px;">
+                                    <img src=${champImgList[4]} width="40" alt="">
+                                </div>
+                                <div style="position:absolute; top:2px; right:65px; text-align:right; color:gray; line-height:30px;">
+                                    <b><a class="spec_list_name nanum" style="color:black;">${idlist[4]}</a></b>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div style="width: 50%; float:right">
+                <table style="width:70%; table-layout:fixed; margin-left: auto; margin-right: 20%; border: 5px solid;"
+                       id="on_game">
+                    <tbody>
+                    </td>
+                    <td style="background-color:#EDF;">
+                        <div style="width:100%; height:20px; position:relative; border-top: 1px solid #eee; background-color: #ff4343">
+                        </div>
+                        <div id="spec_s_r1"
+                             style="width:100%; height:43px; position:relative; border-top: 1px solid #eee;">
+                            <div style="position:absolute; width:8px; height:40px; top:1px; left:-10px;">
+                            </div>
+                            <div class="show_spec_rune tipsy_live"
+                                 style="position:absolute; top:0px; left:0px;" original-title="">
+                                <img src=${champImgList[5]} width="40" alt="">
+                            </div>
+                            <div style="position:absolute; top:2px; left:65px; color:gray; line-height:30px;">
+                                <b><a class="spec_list_name nanum" style="color:black;">${idlist[5]}</a></b><br>
+                            </div>
+                        </div>
+                        <div id="spec_s_r1"
+                             style="width:100%; height:43px; position:relative; border-top: 1px solid #eee;">
+                            <div style="position:absolute; width:8px; height:40px; top:1px; left:-10px;">
+                            </div>
+                            <div class="show_spec_rune tipsy_live"
+                                 style="position:absolute; top:0px; left:0px;" original-title="">
+                                <img src=${champImgList[6]} width="40" alt="">
+                            </div>
+                            <div style="position:absolute; top:2px; left:65px; color:gray; line-height:30px;">
+                                <b><a class="spec_list_name nanum" style="color:black;">${idlist[6]}</a></b><br>
+                            </div>
+                        </div>
+                        <div id="spec_s_r1"
+                             style="width:100%; height:43px; position:relative; border-top: 1px solid #eee;">
+                            <div style="position:absolute; width:8px; height:40px; top:1px; left:-10px;">
+                            </div>
+                            <div class="show_spec_rune tipsy_live"
+                                 style="position:absolute; top:0px; left:0px;" original-title="">
+                                <img src=${champImgList[7]} width="40" alt="">
+                            </div>
+                            <div style="position:absolute; top:2px; left:65px; color:gray; line-height:30px;">
+                                <b><a class="spec_list_name nanum" style="color:black;">${idlist[7]}</a></b><br>
+                            </div>
+                        </div>
+                        <div id="spec_s_r1"
+                             style="width:100%; height:43px; position:relative; border-top: 1px solid #eee;">
+                            <div style="position:absolute; width:8px; height:40px; top:1px; left:-10px;">
+                            </div>
+                            <div class="show_spec_rune tipsy_live"
+                                 style="position:absolute; top:0px; left:0px;" original-title="">
+                                <img src=${champImgList[8]} width="40" alt="">
+                            </div>
+                            <div style="position:absolute; top:2px; left:65px; color:gray; line-height:30px;">
+                                <b><a class="spec_list_name nanum" style="color:black;">${idlist[8]}</a></b><br>
+                            </div>
+                        </div>
+                        <div id="spec_s_r1"
+                             style="width:100%; height:43px; position:relative; border-top: 1px solid #eee;">
+                            <div style="position:absolute; width:8px; height:40px; top:1px; left:-10px;">
+                            </div>
+                            <div class="show_spec_rune tipsy_live"
+                                 style="position:absolute; top:0px; left:0px;" original-title="">
+                                <img src=${champImgList[9]} width="40" alt="">
+                            </div>
+                            <div style="position:absolute; top:2px; left:65px; color:gray; line-height:30px;">
+                                <b><a class="spec_list_name nanum" style="color:black;">${idlist[9]}</a></b><br>
+                            </div>
+                        </div>
+                    </td>
+
+                    </tbody>
+                </table>
+            </div>
+            <div> &nbsp;</div>
+            <div> &nbsp;</div>
+            <div> &nbsp;</div>
+            <div style="text-align: center" id="progressbar">
+                <progress id="file" max="100" value="70" style="width: 85%; height: 15px;"></progress>
+            </div>
+        </div>`
+                $('div').remove("#analyze_text")
+                $('div').remove("#analyze_text_error")
+                $("div").remove("#on_game_data")
+                $("table").remove("#on_game")
+                $("div").remove("#user_defined_game")
+                $('#container_main').append(html)
+            },
+            error: function (request, status, error) {
+                $('div').remove("#analyze_text")
+                $('div').remove("#analyze_text_error")
+                $("div").remove("#on_game_data")
+                $("table").remove("#on_game")
+                $("div").remove("#user_defined_game")
+                var text_error = '<div class="text-center text-white" id="analyze_text_error"> <div>&nbsp;</div> <div>&nbsp;</div> <div>&nbsp;</div> <div>&nbsp;</div> <div>&nbsp;</div> <h3 class="mb-5">게임 중이 아닙니다</h3> </div>'
+                $('#container_main').append(text_error)
+
+                console.log("error");
+            },
+            complete: function () {
+                console.log("complete")
+            }
+        });
+    })
 
 </script>
 </body>

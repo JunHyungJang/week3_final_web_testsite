@@ -11,6 +11,6 @@ urlpatterns = [
     path("post", views.post, name = "post"),
     path('post/<int:id>', views.detail, name='detail'),
     path("post/edit/<int:id>", views.edit, name = 'edit'),
-    path("post/delete/<int:id>", views.delete, name = 'delete')
+    path("post/delete/<int:id>", views.delete, name = 'delete'),
 ]
 
