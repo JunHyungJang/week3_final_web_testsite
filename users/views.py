@@ -123,15 +123,16 @@ def delete(request,id):
 def edit(request,id):
     if not request.session.get('user'):
         return redirect("users:login")
-    board = Board.objects.get(pk = id)
-    if request.method == "POST":
-        board.title = request.POST["title"]
-        board.author = request.POST["author"]
-        board.content = request.POST["content"]
+    else:
+        board = Board.objects.get(pk = id)
+        if request.method == "POST":
+            board.title = request.POST["title"]
+            # board.author = request.POST["author"]
+            board.content = request.POST["content"]
 
-        board.save()
+            board.save()
 
-        return redirect("users:index")
+            return redirect("users:index")
 
 
     return render(request, 'users/edit.html', {'board' : board})

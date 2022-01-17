@@ -18,5 +18,10 @@ import numpy as np
 import matplotlib.pyplot as plt
 from tensorflow.python.keras.models import load_model
 
-model = load_model('Analysis')
+model = load_model('Analysis.h5')
+
+x_test= np.array([[112,31,90,132,102,142,83,101,111,73]])
+y_predict = model.predict(x_test)
+print(y_predict)
+print("당신이 승리할 확률은 {0}% 입니다".format(y_predict[0][1] * 100))
 
