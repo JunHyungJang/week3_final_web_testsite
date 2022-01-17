@@ -1,6 +1,6 @@
-import sys
+# import sys
 import numpy as np
-import pandas as pd
+# import pandas as pd
 import tensorflow as tf
 import matplotlib.pyplot as plt
 from tensorflow import keras
@@ -11,9 +11,12 @@ from keras import metrics
 from tensorflow.keras.optimizers import SGD
 import easydict
 import numpy as np
-import torch
-import torch.nn as nn
-import torch.nn.functional as F
-from torch.utils.data import Dataset,DataLoader
+# import torch
+# import torch.nn as nn
+# import torch.nn.functional as F
+# from torch.utils.data import Dataset,DataLoader
 import matplotlib.pyplot as plt
 from tensorflow.python.keras.models import load_model
+
+model = load_model('Analysis')
+

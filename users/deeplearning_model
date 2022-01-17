@@ -1,0 +1,199 @@
+import sys
+import numpy as np
+import pandas as pd
+import tensorflow as tf
+import matplotlib.pyplot as plt
+from tensorflow import keras
+from tensorflow.keras import layers
+from keras.models import Sequential, Model
+from keras.layers import Input, Dense, Activation
+from keras import metrics
+from tensorflow.keras.optimizers import SGD
+
+import matplotlib.pyplot as plt
+from tensorflow.python.keras.models import load_model
+import requests as req
+from bs4 import BeautifulSoup
+hdr = {'Accept-Language': 'ko_KR,en;q=0.8', 'User-Agent': ('Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Mobile Safari/537.36')}
+import urllib
+
+lol = [
+       "가렌","갈리오","갱플랭크","그라가스","그레이브즈","그웬","나르","나미","나서스","노틸러스",
+       "녹턴","누누와 윌럼프","니달리","니코","다리우스","다이애나","드레이븐","라이즈","라칸","람머스",
+       "럭스","럼블","레넥톤","레오나","렉사이","렐","렝가","루시안","룰루","르블랑",
+       "리 신","리븐","리산드라","릴리아","마스터 이","마오카이","말자하","말파이트","모데카이저","모르가나",
+       "문도 박사","미스 포츈","바드","바루스","바이","베이가","베인","벡스","벨코즈","볼리베어",
+       "브라움","브랜드","블라디미르","블리츠크랭크","비에고","빅토르","뽀삐","사미라","사이온","사일러스",
+       "샤코","세나","세라핀","세주아니","세트","소나","소라카","쉔","쉬바나","스웨인",
+       "스카너","시비르","신 짜오","신드라","신지드","쓰레쉬","아리","아무무","아우렐리온 솔","아이번",
+       "아지르","아칼리","아크샨","아트록스","아펠리오스","알리스타","애니","애니비아","애쉬","야스오",
+       "에코","엘리스","오공","오른","오리아나","올라프","요네","요릭","우디르","우르곳",
+       "워윅","유미","이렐리아","이블린","이즈리얼","일라오이","자르반 4세","자야","자이라","자크",
+       "잔나","잭스","제드","제라스","제이스","조이","직스","진","질리언","징크스",
+       "초가스","카르마","카밀","카사딘","카서스","카시오페아","카이사","카직스","카타리나","칼리스타",
+       "케넨","케이틀린","케인","케일","코그모","코르키","퀸","클레드","키아나","킨드레드",
+       "타릭","탈론","탈리야","탐 켄치","트런들","트리스타나","트린다미어","트위스티드 페이트","트위치","티모",
+       "파이크","판테온","피들스틱","피오라","피즈","하이머딩거","헤카림"
+       ]
+
+lolChampion = {
+    '가렌': 1, '갈리오': 2, '갱플랭크': 3, '그라가스': 4, '그레이브즈': 5, '그웬': 6, '나르': 7, '나미': 8, '나서스': 9, '노틸러스': 10, 
+    '녹턴': 11, '누누와 윌럼프': 12, '니달리': 13, '니코': 14, '다리우스': 15, '다이애나': 16, '드레이븐': 17, '라이즈': 18, '라칸': 19, '람머스': 20,
+    '럭스': 21, '럼블': 22, '레넥톤': 23, '레오나': 24, '렉사이': 25, '렐': 26, '렝가': 27, '루시안': 28, '룰루': 29, '르블랑': 30,
+    '리 신': 31, '리븐': 32, '리산드라': 33, '릴리아': 34, '마스터 이': 35, '마오카이': 36, '말자하': 37, '말파이트': 38, '모데카이저': 39, '모르가나': 40,
+    '문도 박사': 41, '미스 포츈': 42, '바드': 43, '바루스': 44, '바이': 45, '베이가': 46, '베인': 47, '벡스': 48, '벨코즈': 49, '볼리베어': 50,
+    '브라움': 51, '브랜드': 52, '블라디미르': 53, '블리츠크랭크': 54, '비에고': 55, '빅토르': 56, '뽀삐': 57, '사미라': 58, '사이온': 59, '사일러스': 60,
+    '샤코': 61, '세나': 62, '세라핀': 63, '세주아니': 64, '세트': 65, '소나': 66, '소라카': 67, '쉔': 68, '쉬바나': 69, '스웨인': 70,
+    '스카너': 71, '시비르': 72, '신 짜오': 73, '신드라': 74, '신지드': 75, '쓰레쉬': 76, '아리': 77, '아무무': 78, '아우렐리온 솔': 79, '아이번': 80,
+    '아지르': 81, '아칼리': 82, '아크샨': 83, '아트록스': 84, '아펠리오스': 85, '알리스타': 86, '애니': 87, '애니비아': 88, '애쉬': 89, '야스오': 90,
+    '에코': 91, '엘리스': 92, '오공': 93, '오른': 94, '오리아나': 95, '올라프': 96, '요네': 97, '요릭': 98, '우디르': 99, '우르곳': 100,
+    '워윅': 101, '유미': 102, '이렐리아': 103, '이블린': 104, '이즈리얼': 105, '일라오이': 106, '자르반 4세': 107, '자야': 108, '자이라': 109, '자크': 110,
+    '잔나': 111, '잭스': 112, '제드': 113, '제라스': 114, '제이스': 115, '조이': 116, '직스': 117, '진': 118, '질리언': 119, '징크스': 120,
+    '초가스': 121, '카르마': 122, '카밀': 123, '카사딘': 124, '카서스': 125, '카시오페아': 126, '카이사': 127, '카직스': 128, '카타리나': 129, '칼리스타': 130,
+    '케넨': 131, '케이틀린': 132, '케인': 133, '케일': 134, '코그모': 135, '코르키': 136, '퀸': 137, '클레드': 138, '키아나': 139, '킨드레드': 140,
+    '타릭': 141, '탈론': 142, '탈리야': 143, '탐 켄치': 144, '트런들': 145, '트리스타나': 146, '트린다미어': 147, '트위스티드 페이트': 148, '트위치': 149, '티모': 150,
+    '파이크': 151, '판테온': 152, '피들스틱': 153, '피오라': 154, '피즈': 155, '하이머딩거': 156, '헤카림': 157
+    }
+
+
+
+def getUsersUrl(num): #URL에서 html 크롤링
+  url = 'https://www.op.gg/ranking/ladder/page=' + str(num)
+  res = req.get(url, headers=hdr)
+  if res.status_code == 200:
+    html = res.text
+    soup = BeautifulSoup(html, 'html.parser')
+    return soup
+  else :
+      print(res.status_code)
+      return False
+
+def getUsers(soup, users): #유저 이름 크롤링
+  getUser = soup.select("tr.ranking-table__row > td.ranking-table__cell.ranking-table__cell--summoner > a > span")
+  for username in getUser:
+    users.append(username.text.strip())
+  return users
+
+
+def getChampionUrl(nickname):
+  urlname = urllib.parse.quote(nickname)
+  url = "http://fow.kr/find/" + str(urlname)
+  res = req.get(url, headers=hdr)
+  if res.status_code == 200:
+    html = res.text
+    soup = BeautifulSoup(html, 'html.parser')
+    return soup
+  else :
+      print(res.status_code)
+      return False
+
+def getDataUrl(nickname):
+  urlname = urllib.parse.quote(nickname)
+  url = "https://www.op.gg/summoner/userName=" + urlname + "?l=ko_KR"
+  res = req.get(url, headers=hdr)
+  if res.status_code == 200:
+    html = res.text
+    soup = BeautifulSoup(html, 'html.parser')
+    return soup
+  else :
+      print(res.status_code)
+      return False
+
+
+def getResultData(soupfow, re, i, yData):
+  getResult = soupfow.find_all("td", attrs={"class":"recent_td recent_champ"})
+  resultColor = getResult[i]["style"][11:18]
+  if resultColor == "#D4E4FE":
+    if re == True:
+      yData.append([1,0])
+    elif re == False:
+      yData.append([0,1])
+  elif resultColor == "#FFEEEE":
+    if re == True:
+      yData.append([0,1])
+    elif re == False:
+      yData.append([1,0])
+  else:
+    if re == True:
+      yData.append([1,0])
+    elif re == False:
+      yData.append([0,1])
+
+
+def getChampionData(soupfow, xData, yData):
+  playChampions = list()
+  getPlayChampion = soupfow.find_all("b")
+  for i in range(len(getPlayChampion)):
+    if getPlayChampion[i].text.strip() in lol:
+      playChampions.append(getPlayChampion[i].text.strip())
+
+  play = 0
+  count = 0
+  border = 0
+  counting = list()
+  getOtherChampion = soupfow.find_all("div", attrs={"style":"border:0;"})
+
+  for i in range(0,20):
+    champOne = getOtherChampion[2*i].find_all("img")
+    champTwo = getOtherChampion[2*i+1].find_all("img")
+
+    for p in range(len(champOne)):
+      counting.append(lolChampion[champOne[p]["tipsy"]])
+    if len(champOne) == 4:
+      counting.append(lolChampion[playChampions[play]])
+      play += 1
+      re = True
+      getResultData(soupfow, re, i, yData)
+    
+    for q in range(len(champTwo)):
+      counting.append(lolChampion[champTwo[q]["tipsy"]])
+    if len(champTwo) == 4:
+      counting.append(lolChampion[playChampions[play]])
+      play += 1
+      re = False
+      getResultData(soupfow, re, i, yData)
+      
+    xData.append(counting)
+    counting = list()
+
+
+
+users = list()
+for i in range(1,3): #한 페이지당 100명 유저 -> 1페이지부터 시작함.
+  soupUser = getUsersUrl(i)
+  users = getUsers(soupUser, users)
+print(users)
+
+xData = list()
+yData = list()
+for i in range(0,50): #사람 인원 수 설정 -> 한 사람당 20개 데이터 수집 가능함.
+  print("랭킹",i+1,"위:",users[i])
+  soupfow = getChampionUrl(users[i])
+  data = getChampionData(soupfow, xData, yData)
+print()
+print(xData)
+print(yData)
+
+x = np.array(xData)
+y = np.array(yData)
+print(np.shape(y))
+print(np.shape(x))
+
+
+
+model = Sequential()
+model.add(Dense(32, activation = 'relu', input_shape= (10,)))
+model.add(Dense(10, activation = 'relu'))
+model.add(Dense(2, activation = 'softmax'))
+model.compile(loss='categorical_crossentropy', optimizer='sgd', metrics=['accuracy'])
+model.summary()
+
+hist = model.fit(x,y,epochs = 100)
+results = model.evaluate(x,y)
+print(results)
+
+x_test= np.array([[112,31,90,132,102,142,83,101,111,73]])
+y_predict = model.predict(x_test)
+print(y_predict)
+print("당신이 승리할 확률은 {0}% 입니다".format(y_predict[0][1] * 100))
+model.save("Analysis.h5")
