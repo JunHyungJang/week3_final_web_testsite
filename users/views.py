@@ -7,8 +7,42 @@ from django.urls import reverse
 from .models import *
 from django.http import HttpResponseRedirect,  Http404
 from django.views.decorators.csrf import csrf_exempt
+from testsite.on_game_data import ingameOPGG
+from rest_framework.views import APIView
+from rest_framework.response import Response
+from .evaluation import calculate
 
 # Create your views here.
+
+class model_calculate(APIView):
+    def post(self, request):
+        print("reach here1")
+        data = request.data.get('champlist')
+        # print(data.split(','))
+        win_rate = calculate(data.split(','))
+        print(win_rate)
+        return Response(status=200, data=win_rate)
+
+
+class on_game(APIView):
+    def post(self, request):
+        userId = request.data.get('userId')
+        # renewalOPGG(userId)
+        userOnGameData = ingameOPGG(userId)
+        print(userOnGameData)
+        idlist = []
+        champlist = []
+
+        if (len(userOnGameData['Names']) == 0):
+            print("게임중이 아닙니다")
+            return Response(status=404)
+        else:
+            idlist = userOnGameData['Names']
+            champlist = userOnGameData['Champions']
+            imgList = userOnGameData['Champion Images']
+            print(idlist)
+            print(champlist)
+            return Response(status=200, data=[idlist, champlist, imgList])
 
 def main(request):
     user_id = request.session.get('user')
@@ -27,7 +61,7 @@ def main(request):
     #     fuser =User.objects.get(pk = user_pk)
     #     return HTTPResponse(fuser.id)
     
-    return render(request, "users/main.html")
+    return render(request, "users/main.html",{'member_data': 'null'} )
 
 @csrf_exempt
 def login_view(request):
