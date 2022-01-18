@@ -38,21 +38,13 @@ output에 softmax를 적용한뒤 crossentropy의 미분을 사용하여 나온 
 
 
 ## Data
-<ul>
-  <li>Artificial Intelligenc -> Deep Learning -> Neural Network</li>
-  <li>Data -> Crawling -> OP.GG</li>
-  <li>Front-End -> Html, Css, Javascript </li>
-  <li>Back-End -> Django, djangorestframework </li>
-</ul>
+Crawling 기술을 활용해서 데이터 수집을 진행했다.
+언어는 Python을 사용해서 데이터를 가져올 수 있도록 했다.
+Python에서 BeatifulSoup와 Selenium 모듈을 활용해서 Crawling을 진행했다.
+Crawling은 op.gg 사이트에서 진행했으며 챔피온 조합을 가져올 수 있도록 했다.
+데이터는 10X1 행렬 16843개와 20X1 행렬 868개를 수집했다.
+해당 데이터로 딥러닝이 학습하도록 실행했다.
 
-
-## Fron-End
-<ul>
-  <li>Artificial Intelligenc -> Deep Learning -> Neural Network</li>
-  <li>Data -> Crawling -> OP.GG</li>
-  <li>Front-End -> Html, Css, Javascript </li>
-  <li>Back-End -> Django, djangorestframework </li>
-</ul>
 
 ## Back-End
 Django와 sqlite를 이용하여 서버와 데이터 베이스를 구축하였다.
