@@ -1,9 +1,3 @@
-from selenium import webdriver
-from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.common.action_chains import ActionChains
-import time
-from bs4 import BeautifulSoup
-
 champion_name = [
     'Garen', 'Galio', 'Gangplank', 'Gragas', 'Graves', 'Gwen',
     'Gnar', 'Nami', 'Nasus', 'Nautilus', 'Nocturne', 'Nunu',
@@ -32,7 +26,6 @@ champion_name = [
     'Trundle', 'Tristana', 'Tryndamere', 'Twistedfate', 'Twitch', 'Teemo',
     'Pyke', 'Pantheon', 'Fiddlesticks', 'Fiora', 'Fizz', 'Heimerdinger', 'Hecarim'
 ]
-
 
 ImgList = ['https://opgg-static.akamaized.net/images/lol/champion/Garen.png',
  'https://opgg-static.akamaized.net/images/lol/champion/Galio.png',
@@ -192,94 +185,8 @@ ImgList = ['https://opgg-static.akamaized.net/images/lol/champion/Garen.png',
  'https://opgg-static.akamaized.net/images/lol/champion/Heimerdinger.png',
  'https://opgg-static.akamaized.net/images/lol/champion/Hecarim.png']
 
-
-def renewalOPGG(Name):
-    print("갱신중")
-    options = webdriver.ChromeOptions()
-    options.add_argument('headless')
-    options.add_argument('window-size=1920x1080')
-    options.add_argument("disable-gpu")
-
-    driver = webdriver.Chrome(options=options)
-    url = 'https://www.op.gg/summoner/userName=' + Name
-    action = ActionChains(driver)
-    driver.get(url)
-
-    try:
-        driver.find_element_by_css_selector('.Button.SemiRound.Blue').click()
-        action.send_keys(Keys.ENTER)
-        time.sleep(1)
-        driver.get_screenshot_as_file('opgg.png')
-    except Exception as ex:
-        print("exception: ", ex)
-        print("갱신완료")
-        driver.quit()
-    print("갱신완료")
-    driver.quit()
-
-
-def ingameOPGG(Name):
-    print("분석중")
-    options = webdriver.ChromeOptions()
-    options.add_argument('headless')
-    options.add_argument('window-size=1920x1080')
-    options.add_argument("disable-gpu")
-
-    driver = webdriver.Chrome(options=options)
-    # driver = webdriver.Chrome()
-    url = 'https://www.op.gg/summoner/userName=' + Name
-
-    driver.set_page_load_timeout(50)
-    driver.get(url)
-    Container = {}
-
-    driver.find_element_by_css_selector('.SpectateTabButton').click()
-    time.sleep(30)
-
-    html = driver.page_source
-    soup = BeautifulSoup(html, 'html.parser')
-    link = soup.find("link").attrs['href']
-
-    Container['Link'] = link
-
-    ingameInfo = soup.find("div", {"class": "tabItem Content SummonerLayoutContent summonerLayout-spectator"})
-
-    names = ingameInfo.find_all("td", {"class": "SummonerName Cell"})
-    Container['Names'] = []
-
-    if len(names) == 0:
-        return Container
-
-    for name in names:
-        Container['Names'].append(name.text.strip())
-
-    champions = ingameInfo.find_all("td", {"class": "ChampionImage Cell"})
-    Container['Champions'] = []
-    for champion in champions:
-        champ = str(champion.find("a").attrs['href'])
-        champ = champ.replace("/champion/", '').replace("/statistics", '').capitalize()
-        Container['Champions'].append(champ)
-
-    tiers = ingameInfo.find_all("td", {"class": "CurrentSeasonTierRank Cell"})
-    Container['Tiers'] = []
-    for tier in tiers:
-        Container['Tiers'].append(tier.text.strip())
-
-    ratios = ingameInfo.find_all("td", {"class": "RankedWinRatio Cell"})
-    Container['Ratios'] = []
-    for ratio in ratios:
-        Container['Ratios'].append(ratio.text.replace('\n', '').replace('\t', '').strip())
-
-    champRatios = ingameInfo.find_all("td", {"class": "ChampionInfo Cell"})
-    Container['Champion Ratios'] = []
-    for champRatio in champRatios:
-        Container['Champion Ratios'].append(
-            champRatio.text.replace(' ', '').replace('\n', '').replace('\t', '').strip())
-
-    Container['Champion Images'] = []
-    for i in range(len(Container['Champions'])):
-        Container['Champion Images'].append(ImgList[champion_name.index(Container['Champions'][i])])
-
-    driver.quit()
-
-    return Container
+def convert(champlist):
+    imglist = []
+    for i in range(len(champlist)):
+        imglist.append(ImgList[champion_name.index(champlist[i])])
+    return imglist

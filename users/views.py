@@ -11,6 +11,7 @@ from testsite.on_game_data import ingameOPGG
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from .evaluation import calculate
+from .imageconverter import convert
 
 # Create your views here.
 
@@ -22,6 +23,15 @@ class model_calculate(APIView):
         win_rate = calculate(data.split(','))
         print(win_rate)
         return Response(status=200, data=win_rate)
+
+class champNametoImage(APIView):
+    def post(self, request):
+        print("reach here1")
+        data = request.data.get('champlist')
+        imagelist = convert(data.split(','))
+        print(imagelist)
+        return Response(status=200, data=imagelist)
+
 
 
 class on_game(APIView):
@@ -126,18 +136,18 @@ def post(request):
         return redirect("users:login")
     if request.method == "GET":
         board = Board()
-    elif request.method == "POST":
-        print("1222222222222222")
         user_id = request.session['user']
         author = User.objects.get(pk = user_id)
-        print("1111111111111")
+    elif request.method == "POST":
+        user_id = request.session['user']
+        author = User.objects.get(pk = user_id)
         title = request.POST['title']
         content = request.POST['content']
         board = Board(author = author, title = title, content = content)
         board.save()
 
         return redirect("users:index")
-    return render(request,'users/post.html')
+    return render(request,'users/post.html', {'author' : author})
 
 def detail(request, id):
     try:

@@ -20,13 +20,14 @@ from django.urls import path, include
 # from django.conf.urls.static import static
 from django.conf import settings
 from django.conf.urls.static import static
-from users.views import on_game, model_calculate
+from users.views import on_game, model_calculate, champNametoImage
 urlpatterns = [
     path('admin/', admin.site.urls),
     # path('', include('post.urls')),
     path('auth/', include("users.urls")),
     # path('', include("writing.urls"))
     path('content/', on_game.as_view()),
-    path('model/', model_calculate.as_view())
+    path('model/', model_calculate.as_view()),
+    path('convert/', champNametoImage.as_view())
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

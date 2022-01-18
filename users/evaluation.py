@@ -18,37 +18,41 @@ import numpy as np
 import matplotlib.pyplot as plt
 from tensorflow.python.keras.models import load_model
 
-champion_name = ['Aatrox', 'Ahri', 'Akali', 'Akshan', 'Alistar', 'Amumu',
-             'Anivia', 'Annie', 'Aphelios', 'Ashe', 'Aurelionsol', 'Azir',
-             'Bard', 'Blitzcrank', 'Brand', 'Braum', 'Caitlyn', 'Camille',
-             'Cassiopeia', 'Chogath', 'Corki', 'Darius', 'Diana', 'Drmundo',
-             'Draven', 'Ekko', 'Elise', 'Evelynn', 'Ezreal', 'Fiddlesticks',
-             'Fiora', 'Fizz', 'Galio', 'Gangplank', 'Garen', 'Gnar',
-             'Gragas', 'Graves', 'Gwen', 'Hecarim', 'Heimerdinger', 'Illaoi',
-             'Irelia', 'Ivern', 'Janna', 'Jarvaniv', 'Jax', 'Jayce',
-             'Jhin', 'Jinx', 'Kaisa', 'Kalista', 'Karma', 'Karthus',
-             'Kassadin', 'Katarina', 'Kayle', 'Kayn', 'Kennen', 'Khazix',
-             'Kindred', 'Kled', 'Kogmaw', 'Leblanc', 'Leesin', 'Leona',
-             'Lillia', 'Lissandra', 'Lucian', 'Lulu', 'Lux', 'Malphite',
-             'Malzahar', 'Maokai', 'Masteryi', 'Missfortune', 'Mordekaiser', 'Morgana',
-             'Nami', 'Nasus', 'Nautilus', 'Neeko', 'Nidalee', 'Nocturne',
-             'Nunu', 'Olaf', 'Orianna', 'Ornn', 'Pantheon', 'Poppy',
-             'Pyke', 'Qiyana', 'Quinn', 'Rakan', 'Rammus', 'Reksai',
-             'Rell', 'Renekton', 'Rengar', 'Riven', 'Rumble', 'Ryze',
-             'Samira', 'Sejuani', 'Senna', 'Seraphine', 'Sett', 'Shaco',
-             'Shen', 'Shyvana', 'Singed', 'Sion', 'Sivir', 'Skarner',
-             'Sona', 'Soraka', 'Swain', 'Sylas', 'Syndra', 'Tahmkench',
-             'Taliyah', 'Talon', 'Taric', 'Teemo', 'Thresh', 'Tristana',
-             'Trundle', 'Tryndamere', 'Twistedfate', 'Twitch', 'Udyr', 'Urgot',
-             'Varus', 'Vayne', 'Veigar', 'Velkoz', 'Vex', 'Vi',
-             'Viego', 'Viktor', 'Vladimir', 'Volibear', 'Warwick', 'Monkeyking',
-             'Xayah', 'Xerath', 'Xinzhao', 'Yasuo', 'Yone', 'Yorick',
-             'Yuumi', 'Zac', 'Zed', 'Ziggs', 'Zilean', 'Zoe', 'Zyra']
+champion_name = [
+    'Garen', 'Galio', 'Gangplank', 'Gragas', 'Graves', 'Gwen',
+    'Gnar', 'Nami', 'Nasus', 'Nautilus', 'Nocturne', 'Nunu',
+    'Nidalee', 'Neeko', 'Darius', 'Diana', 'Draven', 'Ryze',
+    'Rakan', 'Rammus', 'Lux', 'Rumble', 'Renekton', 'Leona',
+    'Reksai', 'Rell', 'Rengar', 'Lucian', 'Lulu', 'Leblanc',
+    'Leesin', 'Riven', 'Lissandra', 'Lillia', 'Masteryi', 'Maokai',
+    'Malzahar', 'Malphite', 'Mordekaiser', 'Morgana', 'Drmundo', 'Missfortune',
+    'Bard', 'Varus', 'Vi', 'Veigar', 'Vayne', 'Vex',
+    'Velkoz', 'Volibear', 'Braum', 'Brand', 'Vladimir', 'Blitzcrank',
+    'Viego', 'Viktor', 'Poppy', 'Samira', 'Sion', 'Sylas',
+    'Shaco', 'Senna', 'Seraphine', 'Sejuani', 'Sett', 'Sona',
+    'Soraka', 'Shen', 'Shyvana', 'Swain', 'Skarner', 'Sivir',
+    'Xinzhao', 'Syndra', 'Singed', 'Thresh', 'Ahri', 'Amumu',
+    'Aurelionsol', 'Ivern', 'Azir', 'Akali', 'Akshan', 'Aatrox',
+    'Aphelios', 'Alistar', 'Annie', 'Anivia', 'Ashe', 'Yasuo',
+    'Ekko', 'Elise', 'Monkeyking', 'Ornn', 'Orianna', 'Olaf',
+    'Yone', 'Yorick', 'Udyr', 'Urgot', 'Warwick', 'Yuumi',
+    'Irelia', 'Evelynn', 'Ezreal', 'Illaoi', 'Jarvaniv', 'Xayah',
+    'Zyra', 'Zac', 'Janna', 'Jax', 'Zed', 'Xerath',
+    'Jayce', 'Zoe', 'Ziggs', 'Jhin', 'Zilean', 'Jinx',
+    'Chogath', 'Karma', 'Camille', 'Kassadin', 'Karthus', 'Cassiopeia',
+    'Kaisa', 'Khazix', 'Katarina', 'Kalista', 'Kennen', 'Caitlyn',
+    'Kayn', 'Kayle', 'Kogmaw', 'Corki', 'Quinn', 'Kled',
+    'Qiyana', 'Kindred', 'Taric', 'Talon', 'Taliyah', 'Tahmkench',
+    'Trundle', 'Tristana', 'Tryndamere', 'Twistedfate', 'Twitch', 'Teemo',
+    'Pyke', 'Pantheon', 'Fiddlesticks', 'Fiora', 'Fizz', 'Heimerdinger', 'Hecarim'
+]
 
-model = load_model('Analysis.h5')
+model = load_model('Analysis_10_final_2.h5')
 
 def calculate(datalist):
-    model = load_model('Analysis.h5')
+    x_test = 0
+    y_predict = 0
+    # model = load_model('Analysis_10_final_2.h5')
     print("reach here2")
     print(datalist)
     print(champToIndex(datalist))
@@ -61,7 +65,7 @@ def calculate(datalist):
 
     return y_predict[0][0] * 100
 
-def champToIndex(datalist):
+def champToIndex(datalist): 
     temp = []
     for i in range(len(datalist)):
         print(datalist[i])

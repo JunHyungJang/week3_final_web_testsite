@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     {% load static %}
-{#    {{ member_data }}#}
+    {#    {{ member_data }}#}
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
     <meta name="description" content=""/>
@@ -31,7 +31,7 @@
     <div id="container-upper" class="container">
         <a class="navbar-brand" href="#!">CS.GG</a>
         {#        <a class="btn btn-primary btn-sm" id="login_button" href="{% url 'users:login' %}">로그인</a>#}
-<!-- {#        <script>#}
+        <!-- {#        <script>#}
 {#            if ({{ member_data }} == null#}
 {#            )#}
 {#            {#}
@@ -106,123 +106,163 @@
         <div>&nbsp;&nbsp;&nbsp;&nbsp;</div>
         </body>
 
-        <!-- {#        <div>#}
-        {#            <div style="width: 50%; float:left">#}
-        {#                <table style="width:70%; table-layout:fixed; margin-left: 20%; margin-right: auto; border: 5px solid;"#}
-        {#                       id="on_game">#}
-        {#                    <tbody>#}
-        {#                    <tr>#}
-        {#                        <td style="background-color:#DDF;">#}
-        {#                            <div style="width:100%; height:20px; position:relative; border-top: 1px solid #eee; background-color: blue">#}
-        {#                            </div>#}
-        {#                            <div id="spec_s_l1"#}
-        {#                                 style="width:100%; height:43px; position:relative; border-top: 1px solid #eee;">#}
-        {#                                <div style="position:absolute; width:8px; height:40px; top:1px; right:-10px;">#}
-        {#                                </div>#}
-        {#                                <p style="font-family:'Ubuntu', sans-serif; margin-top: 8px; margin-left: 30px; font-size: 17px">#}
-        {#                                    Top#}
-        {#                                </p>#}
-        {#                                <div style="position:absolute; top:5px; right:0px;">#}
-        {#                                    <input type="text" name="text" size="20">#}
-        {#                                </div>#}
-        {#                            </div>#}
-        {#                            <div id="spec_s_l1"#}
-        {#                                 style="width:100%; height:43px; position:relative; border-top: 1px solid #eee;">#}
-        {#                                <div style="position:absolute; width:8px; height:40px; top:1px; right:-10px;">#}
-        {#                                </div>#}
-        {#                                <div style="position:absolute; top:5px; right:0px;">#}
-        {#                                    <input type="text" name="text" size="20">#}
-        {#                                </div>#}
-        {#                            </div>#}
-        {#                            <div id="spec_s_l1"#}
-        {#                                 style="width:100%; height:43px; position:relative; border-top: 1px solid #eee;">#}
-        {#                                <div style="position:absolute; width:8px; height:40px; top:1px; right:-10px;">#}
-        {#                                </div>#}
-        {#                                <div style="position:absolute; top:5px; right:0px;">#}
-        {#                                    <input type="text" name="text" size="20">#}
-        {#                                </div>#}
-        {#                            </div>#}
-        {#                            <div id="spec_s_l1"#}
-        {#                                 style="width:100%; height:43px; position:relative; border-top: 1px solid #eee;">#}
-        {#                                <div style="position:absolute; width:8px; height:40px; top:1px; right:-10px;">#}
-        {#                                </div>#}
-        {#                                <div style="position:absolute; top:5px; right:0px;">#}
-        {#                                    <input type="text" name="text" size="20">#}
-        {#                                </div>#}
-        {#                            </div>#}
-        {#                            <div id="spec_s_l1"#}
-        {#                                 style="width:100%; height:43px; position:relative; border-top: 1px solid #eee;">#}
-        {#                                <div style="position:absolute; width:8px; height:40px; top:1px; right:-10px;">#}
-        {#                                </div>#}
-        {#                                <div style="position:absolute; top:5px; right:0px;">#}
-        {#                                    <input type="text" name="text" size="20">#}
-        {#                                </div>#}
-        {#                            </div>#}
-        {#                        </td>#}
-        {#                    </tr>#}
-        {#                    </tbody>#}
-        {#                </table>#}
-        {#            </div>#}
-        {#            <div style="width: 50%; float:right">#}
-        {#                <table style="width:70%; table-layout:fixed; margin-left: auto; margin-right: 20%; border: 5px solid;"#}
-        {#                       id="on_game">#}
-        {#                    <tbody>#}
-        {#                    </td>#}
-        {#                    <td style="background-color:#EDF;">#}
-        {#                        <div style="width:100%; height:20px; position:relative; border-top: 1px solid #eee; background-color: red">#}
-        {#                        </div>#}
-        {#                        <div id="spec_s_r1"#}
-        {#                             style="width:100%; height:43px; position:relative; border-top: 1px solid #eee;">#}
-        {#                            <div style="position:absolute; width:8px; height:40px; top:1px; left:-10px;">#}
-        {#                            </div>#}
-        {#                            <div style="position:absolute; top:5px; left:0px;">#}
-        {#                                <input type="text" name="text" size="20">#}
-        {#                            </div>#}
-        {#                        </div>#}
-        {#                        <div id="spec_s_r1"#}
-        {#                             style="width:100%; height:43px; position:relative; border-top: 1px solid #eee;">#}
-        {#                            <div style="position:absolute; width:8px; height:40px; top:1px; left:-10px;">#}
-        {#                            </div>#}
-        {#                            <div style="position:absolute; top:5px; left:0px;">#}
-        {#                                <input type="text" name="text" size="20">#}
-        {#                            </div>#}
-        {#                        </div>#}
-        {#                        <div id="spec_s_r1"#}
-        {#                             style="width:100%; height:43px; position:relative; border-top: 1px solid #eee;">#}
-        {#                            <div style="position:absolute; width:8px; height:40px; top:1px; left:-10px;">#}
-        {#                            </div>#}
-        {#                            <div style="position:absolute; top:5px; left:0px;">#}
-        {#                                <input type="text" name="text" size="20">#}
-        {#                            </div>#}
-        {#                        </div>#}
-        {#                        <div id="spec_s_r1"#}
-        {#                             style="width:100%; height:43px; position:relative; border-top: 1px solid #eee;">#}
-        {#                            <div style="position:absolute; width:8px; height:40px; top:1px; left:-10px;">#}
-        {#                            </div>#}
-        {#                            <div style="position:absolute; top:5px; left:0px;">#}
-        {#                                <input type="text" name="text" size="20">#}
-        {#                            </div>#}
-        {#                        </div>#}
-        {#                        <div id="spec_s_r1"#}
-        {#                             style="width:100%; height:43px; position:relative; border-top: 1px solid #eee;">#}
-        {#                            <div style="position:absolute; width:8px; height:40px; top:1px; left:-10px;">#}
-        {#                            </div>#}
-        {#                            <div style="position:absolute; top:5px; left:0px;">#}
-        {#                                <input type="text" name="text" size="20">#}
-        {#                            </div>#}
-        {#                        </div>#}
-        {#                    </td>#}
-        {##}
-        {#                    </tbody>#}
-        {#                </table>#}
-        {#            </div>#}
-        {#            <div>&nbsp;</div>#}
-        {#            <div>&nbsp;</div>#}
-        {#            <div class="button-1" id="search_button" style="float: right; margin-right: 150px">#}
-        {#                <div class="eff-1"></div>#}
-        {#                <a href="#"> GG! </a>#}
-        {#            </div>#}
-        {#        </div>#} -->
+{#        <div id="on_game_data">#}
+{#            <div style="width: 50%; float:left">#}
+{#                <table style="width:70%; table-layout:fixed; margin-left: 20%; margin-right: auto; border: 5px solid;"#}
+{#                       id="on_game">#}
+{#                    <tbody>#}
+{#                    <tr>#}
+{#                        <td style="background-color:#DDF;">#}
+{#                            <div style="width:100%; height:20px; position:relative; border-top: 1px solid #eee; background-color: #3b3bf6">#}
+{#                            </div>#}
+{#                            <div id="spec_s_l1"#}
+{#                                 style="width:100%; height:43px; position:relative; border-top: 1px solid #eee;">#}
+{#                                <div style="position:absolute; width:8px; height:40px; top:1px; right:-10px;">#}
+{#                                </div>#}
+{#                                <div class="show_spec_rune tipsy_live"#}
+{#                                     style="position:absolute; top:0px; right:0px;">#}
+{#                                    <img src=${champImgList[0]} width="40" alt="">#}
+{#                                </div>#}
+{#                                <div style="position:absolute; top:2px; right:65px; text-align:right; color:gray; line-height:30px;">#}
+{#                                    <b><a class="spec_list_name nanum" style="color:black;">${idlist[0]}</a></b>#}
+{#                                </div>#}
+{#                            </div>#}
+{#                            <div id="spec_s_l1"#}
+{#                                 style="width:100%; height:43px; position:relative; border-top: 1px solid #eee;">#}
+{#                                <div style="position:absolute; width:8px; height:40px; top:1px; right:-10px;">#}
+{#                                </div>#}
+{#                                <div class="show_spec_rune tipsy_live"#}
+{#                                     style="position:absolute; top:0px; right:0px;">#}
+{#                                    <img src=${champImgList[1]} width="40" alt="">#}
+{#                                </div>#}
+{#                                <div style="position:absolute; top:2px; right:65px; text-align:right; color:gray; line-height:30px;">#}
+{#                                    <b><a class="spec_list_name nanum" style="color:black;">${idlist[1]}</a></b>#}
+{#                                </div>#}
+{#                            </div>#}
+{#                            <div id="spec_s_l1"#}
+{#                                 style="width:100%; height:43px; position:relative; border-top: 1px solid #eee;">#}
+{#                                <div style="position:absolute; width:8px; height:40px; top:1px; right:-10px;">#}
+{#                                </div>#}
+{#                                <div class="show_spec_rune tipsy_live"#}
+{#                                     style="position:absolute; top:0px; right:0px;">#}
+{#                                    <img src=${champImgList[2]} width="40" alt="">#}
+{#                                </div>#}
+{#                                <div style="position:absolute; top:2px; right:65px; text-align:right; color:gray; line-height:30px;">#}
+{#                                    <b><a class="spec_list_name nanum" style="color:black;">${idlist[2]}</a></b>#}
+{#                                </div>#}
+{#                            </div>#}
+{#                            <div id="spec_s_l1"#}
+{#                                 style="width:100%; height:43px; position:relative; border-top: 1px solid #eee;">#}
+{#                                <div style="position:absolute; width:8px; height:40px; top:1px; right:-10px;">#}
+{#                                </div>#}
+{#                                <div class="show_spec_rune tipsy_live"#}
+{#                                     style="position:absolute; top:0px; right:0px;">#}
+{#                                    <img src=${champImgList[3]} width="40" alt="">#}
+{#                                </div>#}
+{#                                <div style="position:absolute; top:2px; right:65px; text-align:right; color:gray; line-height:30px;">#}
+{#                                    <b><a class="spec_list_name nanum" style="color:black;">${idlist[3]}</a></b>#}
+{#                                </div>#}
+{#                            </div>#}
+{#                            <div id="spec_s_l1"#}
+{#                                 style="width:100%; height:43px; position:relative; border-top: 1px solid #eee;">#}
+{#                                <div style="position:absolute; width:8px; height:40px; top:1px; right:-10px;">#}
+{#                                </div>#}
+{#                                <div class="show_spec_rune tipsy_live"#}
+{#                                     style="position:absolute; top:0px; right:0px;">#}
+{#                                    <img src=${champImgList[4]} width="40" alt="">#}
+{#                                </div>#}
+{#                                <div style="position:absolute; top:2px; right:65px; text-align:right; color:gray; line-height:30px;">#}
+{#                                    <b><a class="spec_list_name nanum" style="color:black;">${idlist[4]}</a></b>#}
+{#                                </div>#}
+{#                            </div>#}
+{#                        </td>#}
+{#                    </tr>#}
+{#                    </tbody>#}
+{#                </table>#}
+{#            </div>#}
+{#            <div style="width: 50%; float:right">#}
+{#                <table style="width:70%; table-layout:fixed; margin-left: auto; margin-right: 20%; border: 5px solid;"#}
+{#                       id="on_game">#}
+{#                    <tbody>#}
+{#                    </td>#}
+{#                    <td style="background-color:#EDF;">#}
+{#                        <div style="width:100%; height:20px; position:relative; border-top: 1px solid #eee; background-color: #ff4343">#}
+{#                        </div>#}
+{#                        <div id="spec_s_r1"#}
+{#                             style="width:100%; height:43px; position:relative; border-top: 1px solid #eee;">#}
+{#                            <div style="position:absolute; width:8px; height:40px; top:1px; left:-10px;">#}
+{#                            </div>#}
+{#                            <div class="show_spec_rune tipsy_live"#}
+{#                                 style="position:absolute; top:0px; left:0px;" original-title="">#}
+{#                                <img src=${champImgList[5]} width="40" alt="">#}
+{#                            </div>#}
+{#                            <div style="position:absolute; top:2px; left:65px; color:gray; line-height:30px;">#}
+{#                                <b><a class="spec_list_name nanum" style="color:black;">${idlist[5]}</a></b><br>#}
+{#                            </div>#}
+{#                        </div>#}
+{#                        <div id="spec_s_r1"#}
+{#                             style="width:100%; height:43px; position:relative; border-top: 1px solid #eee;">#}
+{#                            <div style="position:absolute; width:8px; height:40px; top:1px; left:-10px;">#}
+{#                            </div>#}
+{#                            <div class="show_spec_rune tipsy_live"#}
+{#                                 style="position:absolute; top:0px; left:0px;" original-title="">#}
+{#                                <img src=${champImgList[6]} width="40" alt="">#}
+{#                            </div>#}
+{#                            <div style="position:absolute; top:2px; left:65px; color:gray; line-height:30px;">#}
+{#                                <b><a class="spec_list_name nanum" style="color:black;">${idlist[6]}</a></b><br>#}
+{#                            </div>#}
+{#                        </div>#}
+{#                        <div id="spec_s_r1"#}
+{#                             style="width:100%; height:43px; position:relative; border-top: 1px solid #eee;">#}
+{#                            <div style="position:absolute; width:8px; height:40px; top:1px; left:-10px;">#}
+{#                            </div>#}
+{#                            <div class="show_spec_rune tipsy_live"#}
+{#                                 style="position:absolute; top:0px; left:0px;" original-title="">#}
+{#                                <img src=${champImgList[7]} width="40" alt="">#}
+{#                            </div>#}
+{#                            <div style="position:absolute; top:2px; left:65px; color:gray; line-height:30px;">#}
+{#                                <b><a class="spec_list_name nanum" style="color:black;">${idlist[7]}</a></b><br>#}
+{#                            </div>#}
+{#                        </div>#}
+{#                        <div id="spec_s_r1"#}
+{#                             style="width:100%; height:43px; position:relative; border-top: 1px solid #eee;">#}
+{#                            <div style="position:absolute; width:8px; height:40px; top:1px; left:-10px;">#}
+{#                            </div>#}
+{#                            <div class="show_spec_rune tipsy_live"#}
+{#                                 style="position:absolute; top:0px; left:0px;" original-title="">#}
+{#                                <img src=${champImgList[8]} width="40" alt="">#}
+{#                            </div>#}
+{#                            <div style="position:absolute; top:2px; left:65px; color:gray; line-height:30px;">#}
+{#                                <b><a class="spec_list_name nanum" style="color:black;">${idlist[8]}</a></b><br>#}
+{#                            </div>#}
+{#                        </div>#}
+{#                        <div id="spec_s_r1"#}
+{#                             style="width:100%; height:43px; position:relative; border-top: 1px solid #eee;">#}
+{#                            <div style="position:absolute; width:8px; height:40px; top:1px; left:-10px;">#}
+{#                            </div>#}
+{#                            <div class="show_spec_rune tipsy_live"#}
+{#                                 style="position:absolute; top:0px; left:0px;" original-title="">#}
+{#                                <img src=${champImgList[9]} width="40" alt="">#}
+{#                            </div>#}
+{#                            <div style="position:absolute; top:2px; left:65px; color:gray; line-height:30px;">#}
+{#                                <b><a class="spec_list_name nanum" style="color:black;">${idlist[9]}</a></b><br>#}
+{#                            </div>#}
+{#                        </div>#}
+{#                    </td>#}
+{##}
+{#                    </tbody>#}
+{#                </table>#}
+{#            </div>#}
+{#            <div> &nbsp;</div>#}
+{#            <div> &nbsp;</div>#}
+{#            <div class="text-center text-white">#}
+{#                <h5 class="mb-3" style="text-align: left; margin-left: 100px;float:left">50%</h5>#}
+{#                <h5 class="mb-3" style="text-align: right; margin-right: 100px">50%</h5>#}
+{#            </div>#}
+{#            <div style="text-align: center" id="progressbar">#}
+{#                <progress id="file" max="100" value="50" style="width: 85%; height: 15px;"></progress>#}
+{#            </div>#}
+{#        </div>#}
 
 
     </div>
@@ -249,7 +289,7 @@
             </div>
             <div class="col-lg-4">
                 <div class="features-icons-item mx-auto mb-0 mb-lg-3">
-                    <div class="features-icons-icon d-flex"><a href="http://www.naver.com"
+                    <div class="features-icons-icon d-flex"><a href="https://www.op.gg/champion/statistics"
                                                                style="margin-left: auto; margin-right: auto"><i
                             class="bi-terminal m-auto text-primary"></i></a></div>
                     <h3>챔피언 추천</h3>
@@ -379,15 +419,16 @@
     var champlist;
     var champImgList;
     var user_defined_champ_list = [];
-    var win_rate;
+    var win_rate_blue;
+    var win_rate_red;
 
-    if('{{ member_data }}' == 'null'){
+    if ('{{ member_data }}' == 'null') {
         var login_button = `<a class="btn btn-primary btn-sm" id="login_button" href="{% url 'users:login' %}">로그인</a>`
         $('#container-upper').append(login_button);
         console.log("reach");
     }
-    if ('{{ member_data }}' != 'null'){
-        console.log('{{ member_data')
+    if ('{{ member_data }}' != 'null') {
+        console.log('{{ member_data}}')
         var login_button = `<a class="btn btn-primary btn-sm" id="login_button" href="{% url 'users:logout' %}">로그아웃</a>`
         $('#container-upper').append(login_button);
         console.log("reach2");
@@ -485,7 +526,7 @@
                             <div style="position:absolute; top:5px; left:0px;">
                                 <input id="champ6" type="text" name="text" size="20">
                             </div>
-                            <p style="font-family:'Ubuntu', sans-serif; margin-top: 8px; margin-left: 390px; font-size: 17px">
+                            <p style="font-family:'Ubuntu', sans-serif; margin-top: 8px; margin-left: 380px; font-size: 17px">
                                     Top
                             </p>
                         </div>
@@ -496,7 +537,7 @@
                             <div style="position:absolute; top:5px; left:0px;">
                                 <input id="champ7" type="text" name="text" size="20">
                             </div>
-                            <p style="font-family:'Ubuntu', sans-serif; margin-top: 8px; margin-left: 365px; font-size: 17px">
+                            <p style="font-family:'Ubuntu', sans-serif; margin-top: 8px; margin-left: 355px; font-size: 17px">
                                     Jungle
                             </p>
                         </div>
@@ -507,7 +548,7 @@
                             <div style="position:absolute; top:5px; left:0px;">
                                 <input id="champ8" type="text" name="text" size="20">
                             </div>
-                            <p style="font-family:'Ubuntu', sans-serif; margin-top: 8px; margin-left: 390px; font-size: 17px">
+                            <p style="font-family:'Ubuntu', sans-serif; margin-top: 8px; margin-left: 380px; font-size: 17px">
                                     Mid
                             </p>
                         </div>
@@ -518,7 +559,7 @@
                             <div style="position:absolute; top:5px; left:0px;">
                                 <input id="champ9" type="text" name="text" size="20">
                             </div>
-                            <p style="font-family:'Ubuntu', sans-serif; margin-top: 8px; margin-left: 390px; font-size: 17px">
+                            <p style="font-family:'Ubuntu', sans-serif; margin-top: 8px; margin-left: 380px; font-size: 17px">
                                     Adc
                             </p>
                         </div>
@@ -529,7 +570,7 @@
                             <div style="position:absolute; top:5px; left:0px;">
                                 <input id="champ10" type="text" name="text" size="20">
                             </div>
-                            <p style="font-family:'Ubuntu', sans-serif; margin-top: 8px; margin-left: 360px; font-size: 17px">
+                            <p style="font-family:'Ubuntu', sans-serif; margin-top: 8px; margin-left: 350px; font-size: 17px">
                                     Support
                             </p>
                         </div>
@@ -562,7 +603,253 @@
         user_defined_champ_list.push($('#champ9').val());
         user_defined_champ_list.push($('#champ10').val());
 
-        console.log(user_defined_champ_list);
+        console.log(user_defined_champ_list)
+        let model_input = new FormData();
+        model_input.append("champlist", user_defined_champ_list);
+
+        $.ajax({
+            url: "http://127.0.0.1:8000/model/",
+            data: model_input,
+            type: "POST",
+            processData: false,
+            contentType: false,
+
+            success: function (data) {
+                console.log("reach here1")
+                win_rate_blue = data.toFixed(2)
+                win_rate_red = 100 - win_rate_blue
+
+
+                let model_input = new FormData();
+                model_input.append("champlist", user_defined_champ_list);
+                $.ajax({
+                    url: "http://127.0.0.1:8000/convert/",
+                    data: model_input,
+                    type: "POST",
+                    processData: false,
+                    contentType: false,
+                    
+                    success: function(data){
+
+                        champImgList =data
+                        console.log("finished")
+                        console.log(data)
+                        console.log(champImgList)
+                        console.log(win_rate_blue)
+
+
+                        var html = `<div id="on_game_data">
+                            <div style="width: 50%; float:left">
+                                <table style="width:70%; table-layout:fixed; margin-left: 20%; margin-right: auto; border: 5px solid;"
+                                    id="on_game">
+                                    <tbody>
+                                    <tr>
+                                        <td style="background-color:#DDF;">
+                                            <div style="width:100%; height:20px; position:relative; border-top: 1px solid #eee; background-color: #3b3bf6">
+                                            </div>
+                                            <div id="spec_s_l1"
+                                                style="width:100%; height:43px; position:relative; border-top: 1px solid #eee;">
+                                                <div style="position:absolute; width:8px; height:40px; top:1px; right:-10px;">
+                                                </div>
+                                                <div class="show_spec_rune tipsy_live"
+                                                    style="position:absolute; top:0px; right:0px;">
+                                                    <img src=${champImgList[0]} width="40" alt="">
+                                                </div>
+                                                <div style="position:absolute; top:2px; right:65px; text-align:right; color:gray; line-height:30px;">
+                                                    <b><a class="spec_list_name nanum" style="color:black;">${user_defined_champ_list[0]}</a></b>
+                                                </div>
+                                                <p style="font-family:'Ubuntu', sans-serif; margin-top: 8px; margin-left: 30px; font-size: 17px">
+                                                    Top
+                                                </p>
+                                            </div>
+                                            <div id="spec_s_l1"
+                                                style="width:100%; height:43px; position:relative; border-top: 1px solid #eee;">
+                                                <div style="position:absolute; width:8px; height:40px; top:1px; right:-10px;">
+                                                </div>
+                                                <div class="show_spec_rune tipsy_live"
+                                                    style="position:absolute; top:0px; right:0px;">
+                                                    <img src=${champImgList[1]} width="40" alt="">
+                                                </div>
+                                                <div style="position:absolute; top:2px; right:65px; text-align:right; color:gray; line-height:30px;">
+                                                    <b><a class="spec_list_name nanum" style="color:black;">${user_defined_champ_list[1]}</a></b>
+                                                </div>
+                                                <p style="font-family:'Ubuntu', sans-serif; margin-top: 8px; margin-left: 30px; font-size: 17px">
+                                                    Jungle
+                                                </p>
+                                            </div>
+                                            <div id="spec_s_l1"
+                                                style="width:100%; height:43px; position:relative; border-top: 1px solid #eee;">
+                                                <div style="position:absolute; width:8px; height:40px; top:1px; right:-10px;">
+                                                </div>
+                                                <div class="show_spec_rune tipsy_live"
+                                                    style="position:absolute; top:0px; right:0px;">
+                                                    <img src=${champImgList[2]} width="40" alt="">
+                                                </div>
+                                                <div style="position:absolute; top:2px; right:65px; text-align:right; color:gray; line-height:30px;">
+                                                    <b><a class="spec_list_name nanum" style="color:black;">${user_defined_champ_list[2]}</a></b>
+                                                </div>
+                                                <p style="font-family:'Ubuntu', sans-serif; margin-top: 8px; margin-left: 30px; font-size: 17px">
+                                                    Mid
+                                                </p>
+                                            </div>
+                                            <div id="spec_s_l1"
+                                                style="width:100%; height:43px; position:relative; border-top: 1px solid #eee;">
+                                                <div style="position:absolute; width:8px; height:40px; top:1px; right:-10px;">
+                                                </div>
+                                                <div class="show_spec_rune tipsy_live"
+                                                    style="position:absolute; top:0px; right:0px;">
+                                                    <img src=${champImgList[3]} width="40" alt="">
+                                                </div>
+                                                <div style="position:absolute; top:2px; right:65px; text-align:right; color:gray; line-height:30px;">
+                                                    <b><a class="spec_list_name nanum" style="color:black;">${user_defined_champ_list[3]}</a></b>
+                                                </div>
+                                                <p style="font-family:'Ubuntu', sans-serif; margin-top: 8px; margin-left: 30px; font-size: 17px">
+                                                    Adc
+                                                </p>
+                                            </div>
+                                            <div id="spec_s_l1"
+                                                style="width:100%; height:43px; position:relative; border-top: 1px solid #eee;">
+                                                <div style="position:absolute; width:8px; height:40px; top:1px; right:-10px;">
+                                                </div>
+                                                <div class="show_spec_rune tipsy_live"
+                                                    style="position:absolute; top:0px; right:0px;">
+                                                    <img src=${champImgList[4]} width="40" alt="">
+                                                </div>
+                                                <div style="position:absolute; top:2px; right:65px; text-align:right; color:gray; line-height:30px;">
+                                                    <b><a class="spec_list_name nanum" style="color:black;">${user_defined_champ_list[4]}</a></b>
+                                                </div>
+                                                <p style="font-family:'Ubuntu', sans-serif; margin-top: 8px; margin-left: 30px; font-size: 17px">
+                                                    Support
+                                                </p>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div style="width: 50%; float:right">
+                                <table style="width:70%; table-layout:fixed; margin-left: auto; margin-right: 20%; border: 5px solid;"
+                                    id="on_game">
+                                    <tbody>
+                                    </td>
+                                    <td style="background-color:#EDF;">
+                                        <div style="width:100%; height:20px; position:relative; border-top: 1px solid #eee; background-color: #ff4343">
+                                        </div>
+                                        <div id="spec_s_r1"
+                                            style="width:100%; height:43px; position:relative; border-top: 1px solid #eee;">
+                                            <div style="position:absolute; width:8px; height:40px; top:1px; left:-10px;">
+                                            </div>
+                                            <div class="show_spec_rune tipsy_live"
+                                                style="position:absolute; top:0px; left:0px;" original-title="">
+                                                <img src=${champImgList[5]} width="40" alt="">
+                                            </div>
+                                            <div style="position:absolute; top:2px; left:65px; color:gray; line-height:30px;">
+                                                <b><a class="spec_list_name nanum" style="color:black;">${user_defined_champ_list[5]}</a></b><br>
+                                            </div>
+                                            <p style="font-family:'Ubuntu', sans-serif; margin-top: 8px; margin-left: 380px; font-size: 17px">
+                                                    Top
+                                            </p>
+                                        </div>
+                                        <div id="spec_s_r1"
+                                            style="width:100%; height:43px; position:relative; border-top: 1px solid #eee;">
+                                            <div style="position:absolute; width:8px; height:40px; top:1px; left:-10px;">
+                                            </div>
+                                            <div class="show_spec_rune tipsy_live"
+                                                style="position:absolute; top:0px; left:0px;" original-title="">
+                                                <img src=${champImgList[6]} width="40" alt="">
+                                            </div>
+                                            <div style="position:absolute; top:2px; left:65px; color:gray; line-height:30px;">
+                                                <b><a class="spec_list_name nanum" style="color:black;">${user_defined_champ_list[6]}</a></b><br>
+                                            </div>
+                                            <p style="font-family:'Ubuntu', sans-serif; margin-top: 8px; margin-left: 355px; font-size: 17px">
+                                                    Jungle
+                                            </p>
+                                        </div>
+                                        <div id="spec_s_r1"
+                                            style="width:100%; height:43px; position:relative; border-top: 1px solid #eee;">
+                                            <div style="position:absolute; width:8px; height:40px; top:1px; left:-10px;">
+                                            </div>
+                                            <div class="show_spec_rune tipsy_live"
+                                                style="position:absolute; top:0px; left:0px;" original-title="">
+                                                <img src=${champImgList[7]} width="40" alt="">
+                                            </div>
+                                            <div style="position:absolute; top:2px; left:65px; color:gray; line-height:30px;">
+                                                <b><a class="spec_list_name nanum" style="color:black;">${user_defined_champ_list[7]}</a></b><br>
+                                            </div>
+                                            <p style="font-family:'Ubuntu', sans-serif; margin-top: 8px; margin-left: 380px; font-size: 17px">
+                                                    Mid
+                                            </p>
+                                        </div>
+                                        <div id="spec_s_r1"
+                                            style="width:100%; height:43px; position:relative; border-top: 1px solid #eee;">
+                                            <div style="position:absolute; width:8px; height:40px; top:1px; left:-10px;">
+                                            </div>
+                                            <div class="show_spec_rune tipsy_live"
+                                                style="position:absolute; top:0px; left:0px;" original-title="">
+                                                <img src=${champImgList[8]} width="40" alt="">
+                                            </div>
+                                            <div style="position:absolute; top:2px; left:65px; color:gray; line-height:30px;">
+                                                <b><a class="spec_list_name nanum" style="color:black;">${user_defined_champ_list[8]}</a></b><br>
+                                            </div>
+                                            <p style="font-family:'Ubuntu', sans-serif; margin-top: 8px; margin-left: 380px; font-size: 17px">
+                                                    Adc
+                                            </p>
+                                        </div>
+                                        <div id="spec_s_r1"
+                                            style="width:100%; height:43px; position:relative; border-top: 1px solid #eee;">
+                                            <div style="position:absolute; width:8px; height:40px; top:1px; left:-10px;">
+                                            </div>
+                                            <div class="show_spec_rune tipsy_live"
+                                                style="position:absolute; top:0px; left:0px;" original-title="">
+                                                <img src=${champImgList[9]} width="40" alt="">
+                                            </div>
+                                            <div style="position:absolute; top:2px; left:65px; color:gray; line-height:30px;">
+                                                <b><a class="spec_list_name nanum" style="color:black;">${user_defined_champ_list[9]}</a></b><br>
+                                            </div>
+                                            <p style="font-family:'Ubuntu', sans-serif; margin-top: 8px; margin-left: 350px; font-size: 17px">
+                                                    Suppport
+                                            </p>
+                                        </div>
+                                    </td>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div> &nbsp;</div>
+                            <div> &nbsp;</div>
+                            <div class="text-center text-white">
+                                <h5 class="mb-3" style="text-align: left; margin-left: 100px;float:left">${win_rate_blue}%</h5>
+                                <h5 class="mb-3" style="text-align: right; margin-right: 100px">${win_rate_red}%</h5>
+                            </div>
+                            <div style="text-align: center" id="progressbar">
+                                <progress id="file" max="100" value="${win_rate_blue}" style="width: 85%; height: 15px;"></progress>
+                            </div>
+                        </div>`
+                        $('div').remove("#analyze_text")
+                        $('div').remove("#analyze_text_error")
+                        $("div").remove("#on_game_data")
+                        $("table").remove("#on_game")
+                        $("div").remove("#user_defined_game")
+                        $('#container_main').append(html)
+
+
+                    },
+                    error: function(data){
+                        console.log("error")
+                    },
+                    complete: function(data){
+                        console.log("complete")
+
+                    }
+                })
+
+            },
+            error: function (data) {
+            },
+            complete: function (data) {
+            }
+        })
+
     })
 
     $('#search_button').click(function () {
@@ -606,7 +893,8 @@
 
                     success: function (data) {
                         console.log(data)
-                        win_rate = data
+                        win_rate_blue = data.toFixed(2)
+                        win_rate_red = 100 - win_rate_blue
                         var html = `<div id="on_game_data">
                     <div style="width: 50%; float:left">
                         <table style="width:70%; table-layout:fixed; margin-left: 20%; margin-right: auto; border: 5px solid;"
@@ -627,6 +915,9 @@
                                         <div style="position:absolute; top:2px; right:65px; text-align:right; color:gray; line-height:30px;">
                                             <b><a class="spec_list_name nanum" style="color:black;">${idlist[0]}</a></b>
                                         </div>
+                                        <p style="font-family:'Ubuntu', sans-serif; margin-top: 8px; margin-left: 30px; font-size: 17px">
+                                            Top
+                                        </p>
                                     </div>
                                     <div id="spec_s_l1"
                                         style="width:100%; height:43px; position:relative; border-top: 1px solid #eee;">
@@ -639,6 +930,9 @@
                                         <div style="position:absolute; top:2px; right:65px; text-align:right; color:gray; line-height:30px;">
                                             <b><a class="spec_list_name nanum" style="color:black;">${idlist[1]}</a></b>
                                         </div>
+                                        <p style="font-family:'Ubuntu', sans-serif; margin-top: 8px; margin-left: 30px; font-size: 17px">
+                                            Jungle
+                                        </p>
                                     </div>
                                     <div id="spec_s_l1"
                                         style="width:100%; height:43px; position:relative; border-top: 1px solid #eee;">
@@ -651,6 +945,9 @@
                                         <div style="position:absolute; top:2px; right:65px; text-align:right; color:gray; line-height:30px;">
                                             <b><a class="spec_list_name nanum" style="color:black;">${idlist[2]}</a></b>
                                         </div>
+                                        <p style="font-family:'Ubuntu', sans-serif; margin-top: 8px; margin-left: 30px; font-size: 17px">
+                                            Mid
+                                        </p>
                                     </div>
                                     <div id="spec_s_l1"
                                         style="width:100%; height:43px; position:relative; border-top: 1px solid #eee;">
@@ -663,6 +960,9 @@
                                         <div style="position:absolute; top:2px; right:65px; text-align:right; color:gray; line-height:30px;">
                                             <b><a class="spec_list_name nanum" style="color:black;">${idlist[3]}</a></b>
                                         </div>
+                                        <p style="font-family:'Ubuntu', sans-serif; margin-top: 8px; margin-left: 30px; font-size: 17px">
+                                            Adc
+                                        </p>
                                     </div>
                                     <div id="spec_s_l1"
                                         style="width:100%; height:43px; position:relative; border-top: 1px solid #eee;">
@@ -675,6 +975,9 @@
                                         <div style="position:absolute; top:2px; right:65px; text-align:right; color:gray; line-height:30px;">
                                             <b><a class="spec_list_name nanum" style="color:black;">${idlist[4]}</a></b>
                                         </div>
+                                        <p style="font-family:'Ubuntu', sans-serif; margin-top: 8px; margin-left: 30px; font-size: 17px">
+                                            Support
+                                        </p>
                                     </div>
                                 </td>
                             </tr>
@@ -700,6 +1003,9 @@
                                     <div style="position:absolute; top:2px; left:65px; color:gray; line-height:30px;">
                                         <b><a class="spec_list_name nanum" style="color:black;">${idlist[5]}</a></b><br>
                                     </div>
+                                    <p style="font-family:'Ubuntu', sans-serif; margin-top: 8px; margin-left: 380px; font-size: 17px">
+                                            Top
+                                    </p>
                                 </div>
                                 <div id="spec_s_r1"
                                     style="width:100%; height:43px; position:relative; border-top: 1px solid #eee;">
@@ -712,6 +1018,9 @@
                                     <div style="position:absolute; top:2px; left:65px; color:gray; line-height:30px;">
                                         <b><a class="spec_list_name nanum" style="color:black;">${idlist[6]}</a></b><br>
                                     </div>
+                                    <p style="font-family:'Ubuntu', sans-serif; margin-top: 8px; margin-left: 355px; font-size: 17px">
+                                            Jungle
+                                    </p>
                                 </div>
                                 <div id="spec_s_r1"
                                     style="width:100%; height:43px; position:relative; border-top: 1px solid #eee;">
@@ -724,6 +1033,9 @@
                                     <div style="position:absolute; top:2px; left:65px; color:gray; line-height:30px;">
                                         <b><a class="spec_list_name nanum" style="color:black;">${idlist[7]}</a></b><br>
                                     </div>
+                                    <p style="font-family:'Ubuntu', sans-serif; margin-top: 8px; margin-left: 380px; font-size: 17px">
+                                            Mid
+                                    </p>
                                 </div>
                                 <div id="spec_s_r1"
                                     style="width:100%; height:43px; position:relative; border-top: 1px solid #eee;">
@@ -736,6 +1048,9 @@
                                     <div style="position:absolute; top:2px; left:65px; color:gray; line-height:30px;">
                                         <b><a class="spec_list_name nanum" style="color:black;">${idlist[8]}</a></b><br>
                                     </div>
+                                    <p style="font-family:'Ubuntu', sans-serif; margin-top: 8px; margin-left: 380px; font-size: 17px">
+                                            Adc
+                                    </p>
                                 </div>
                                 <div id="spec_s_r1"
                                     style="width:100%; height:43px; position:relative; border-top: 1px solid #eee;">
@@ -748,6 +1063,9 @@
                                     <div style="position:absolute; top:2px; left:65px; color:gray; line-height:30px;">
                                         <b><a class="spec_list_name nanum" style="color:black;">${idlist[9]}</a></b><br>
                                     </div>
+                                    <p style="font-family:'Ubuntu', sans-serif; margin-top: 8px; margin-left: 350px; font-size: 17px">
+                                            Suppport
+                                    </p>
                                 </div>
                             </td>
 
@@ -756,10 +1074,12 @@
                     </div>
                     <div> &nbsp;</div>
                     <div> &nbsp;</div>
-                    <h2>${win_rate}</h2>
-                    <div> &nbsp;</div>
+                    <div class="text-center text-white">
+                        <h5 class="mb-3" style="text-align: left; margin-left: 100px;float:left">${win_rate_blue}%</h5>
+                        <h5 class="mb-3" style="text-align: right; margin-right: 100px">${win_rate_red}%</h5>
+                    </div>
                     <div style="text-align: center" id="progressbar">
-                        <progress id="file" max="100" value="${win_rate}" style="width: 85%; height: 15px;"></progress>
+                        <progress id="file" max="100" value="${win_rate_blue}" style="width: 85%; height: 15px;"></progress>
                     </div>
                 </div>`
                         $('div').remove("#analyze_text")
@@ -770,173 +1090,174 @@
                         $('#container_main').append(html)
 
                     },
-                    error: function(){
+                    error: function () {
                     },
                     complete: function () {
-                    console.log("complete")
-                }})
+                        console.log("complete")
+                    }
+                })
 
-        //         var html = `<div id="on_game_data">
-        //     <div style="width: 50%; float:left">
-        //         <table style="width:70%; table-layout:fixed; margin-left: 20%; margin-right: auto; border: 5px solid;"
-        //                id="on_game">
-        //             <tbody>
-        //             <tr>
-        //                 <td style="background-color:#DDF;">
-        //                     <div style="width:100%; height:20px; position:relative; border-top: 1px solid #eee; background-color: #3b3bf6">
-        //                     </div>
-        //                     <div id="spec_s_l1"
-        //                          style="width:100%; height:43px; position:relative; border-top: 1px solid #eee;">
-        //                         <div style="position:absolute; width:8px; height:40px; top:1px; right:-10px;">
-        //                         </div>
-        //                         <div class="show_spec_rune tipsy_live"
-        //                              style="position:absolute; top:0px; right:0px;">
-        //                             <img src=${champImgList[0]} width="40" alt="">
-        //                         </div>
-        //                         <div style="position:absolute; top:2px; right:65px; text-align:right; color:gray; line-height:30px;">
-        //                             <b><a class="spec_list_name nanum" style="color:black;">${idlist[0]}</a></b>
-        //                         </div>
-        //                     </div>
-        //                     <div id="spec_s_l1"
-        //                          style="width:100%; height:43px; position:relative; border-top: 1px solid #eee;">
-        //                         <div style="position:absolute; width:8px; height:40px; top:1px; right:-10px;">
-        //                         </div>
-        //                         <div class="show_spec_rune tipsy_live"
-        //                              style="position:absolute; top:0px; right:0px;">
-        //                             <img src=${champImgList[1]} width="40" alt="">
-        //                         </div>
-        //                         <div style="position:absolute; top:2px; right:65px; text-align:right; color:gray; line-height:30px;">
-        //                             <b><a class="spec_list_name nanum" style="color:black;">${idlist[1]}</a></b>
-        //                         </div>
-        //                     </div>
-        //                     <div id="spec_s_l1"
-        //                          style="width:100%; height:43px; position:relative; border-top: 1px solid #eee;">
-        //                         <div style="position:absolute; width:8px; height:40px; top:1px; right:-10px;">
-        //                         </div>
-        //                         <div class="show_spec_rune tipsy_live"
-        //                              style="position:absolute; top:0px; right:0px;">
-        //                             <img src=${champImgList[2]} width="40" alt="">
-        //                         </div>
-        //                         <div style="position:absolute; top:2px; right:65px; text-align:right; color:gray; line-height:30px;">
-        //                             <b><a class="spec_list_name nanum" style="color:black;">${idlist[2]}</a></b>
-        //                         </div>
-        //                     </div>
-        //                     <div id="spec_s_l1"
-        //                          style="width:100%; height:43px; position:relative; border-top: 1px solid #eee;">
-        //                         <div style="position:absolute; width:8px; height:40px; top:1px; right:-10px;">
-        //                         </div>
-        //                         <div class="show_spec_rune tipsy_live"
-        //                              style="position:absolute; top:0px; right:0px;">
-        //                             <img src=${champImgList[3]} width="40" alt="">
-        //                         </div>
-        //                         <div style="position:absolute; top:2px; right:65px; text-align:right; color:gray; line-height:30px;">
-        //                             <b><a class="spec_list_name nanum" style="color:black;">${idlist[3]}</a></b>
-        //                         </div>
-        //                     </div>
-        //                     <div id="spec_s_l1"
-        //                          style="width:100%; height:43px; position:relative; border-top: 1px solid #eee;">
-        //                         <div style="position:absolute; width:8px; height:40px; top:1px; right:-10px;">
-        //                         </div>
-        //                         <div class="show_spec_rune tipsy_live"
-        //                              style="position:absolute; top:0px; right:0px;">
-        //                             <img src=${champImgList[4]} width="40" alt="">
-        //                         </div>
-        //                         <div style="position:absolute; top:2px; right:65px; text-align:right; color:gray; line-height:30px;">
-        //                             <b><a class="spec_list_name nanum" style="color:black;">${idlist[4]}</a></b>
-        //                         </div>
-        //                     </div>
-        //                 </td>
-        //             </tr>
-        //             </tbody>
-        //         </table>
-        //     </div>
-        //     <div style="width: 50%; float:right">
-        //         <table style="width:70%; table-layout:fixed; margin-left: auto; margin-right: 20%; border: 5px solid;"
-        //                id="on_game">
-        //             <tbody>
-        //             </td>
-        //             <td style="background-color:#EDF;">
-        //                 <div style="width:100%; height:20px; position:relative; border-top: 1px solid #eee; background-color: #ff4343">
-        //                 </div>
-        //                 <div id="spec_s_r1"
-        //                      style="width:100%; height:43px; position:relative; border-top: 1px solid #eee;">
-        //                     <div style="position:absolute; width:8px; height:40px; top:1px; left:-10px;">
-        //                     </div>
-        //                     <div class="show_spec_rune tipsy_live"
-        //                          style="position:absolute; top:0px; left:0px;" original-title="">
-        //                         <img src=${champImgList[5]} width="40" alt="">
-        //                     </div>
-        //                     <div style="position:absolute; top:2px; left:65px; color:gray; line-height:30px;">
-        //                         <b><a class="spec_list_name nanum" style="color:black;">${idlist[5]}</a></b><br>
-        //                     </div>
-        //                 </div>
-        //                 <div id="spec_s_r1"
-        //                      style="width:100%; height:43px; position:relative; border-top: 1px solid #eee;">
-        //                     <div style="position:absolute; width:8px; height:40px; top:1px; left:-10px;">
-        //                     </div>
-        //                     <div class="show_spec_rune tipsy_live"
-        //                          style="position:absolute; top:0px; left:0px;" original-title="">
-        //                         <img src=${champImgList[6]} width="40" alt="">
-        //                     </div>
-        //                     <div style="position:absolute; top:2px; left:65px; color:gray; line-height:30px;">
-        //                         <b><a class="spec_list_name nanum" style="color:black;">${idlist[6]}</a></b><br>
-        //                     </div>
-        //                 </div>
-        //                 <div id="spec_s_r1"
-        //                      style="width:100%; height:43px; position:relative; border-top: 1px solid #eee;">
-        //                     <div style="position:absolute; width:8px; height:40px; top:1px; left:-10px;">
-        //                     </div>
-        //                     <div class="show_spec_rune tipsy_live"
-        //                          style="position:absolute; top:0px; left:0px;" original-title="">
-        //                         <img src=${champImgList[7]} width="40" alt="">
-        //                     </div>
-        //                     <div style="position:absolute; top:2px; left:65px; color:gray; line-height:30px;">
-        //                         <b><a class="spec_list_name nanum" style="color:black;">${idlist[7]}</a></b><br>
-        //                     </div>
-        //                 </div>
-        //                 <div id="spec_s_r1"
-        //                      style="width:100%; height:43px; position:relative; border-top: 1px solid #eee;">
-        //                     <div style="position:absolute; width:8px; height:40px; top:1px; left:-10px;">
-        //                     </div>
-        //                     <div class="show_spec_rune tipsy_live"
-        //                          style="position:absolute; top:0px; left:0px;" original-title="">
-        //                         <img src=${champImgList[8]} width="40" alt="">
-        //                     </div>
-        //                     <div style="position:absolute; top:2px; left:65px; color:gray; line-height:30px;">
-        //                         <b><a class="spec_list_name nanum" style="color:black;">${idlist[8]}</a></b><br>
-        //                     </div>
-        //                 </div>
-        //                 <div id="spec_s_r1"
-        //                      style="width:100%; height:43px; position:relative; border-top: 1px solid #eee;">
-        //                     <div style="position:absolute; width:8px; height:40px; top:1px; left:-10px;">
-        //                     </div>
-        //                     <div class="show_spec_rune tipsy_live"
-        //                          style="position:absolute; top:0px; left:0px;" original-title="">
-        //                         <img src=${champImgList[9]} width="40" alt="">
-        //                     </div>
-        //                     <div style="position:absolute; top:2px; left:65px; color:gray; line-height:30px;">
-        //                         <b><a class="spec_list_name nanum" style="color:black;">${idlist[9]}</a></b><br>
-        //                     </div>
-        //                 </div>
-        //             </td>
+                //         var html = `<div id="on_game_data">
+                //     <div style="width: 50%; float:left">
+                //         <table style="width:70%; table-layout:fixed; margin-left: 20%; margin-right: auto; border: 5px solid;"
+                //                id="on_game">
+                //             <tbody>
+                //             <tr>
+                //                 <td style="background-color:#DDF;">
+                //                     <div style="width:100%; height:20px; position:relative; border-top: 1px solid #eee; background-color: #3b3bf6">
+                //                     </div>
+                //                     <div id="spec_s_l1"
+                //                          style="width:100%; height:43px; position:relative; border-top: 1px solid #eee;">
+                //                         <div style="position:absolute; width:8px; height:40px; top:1px; right:-10px;">
+                //                         </div>
+                //                         <div class="show_spec_rune tipsy_live"
+                //                              style="position:absolute; top:0px; right:0px;">
+                //                             <img src=${champImgList[0]} width="40" alt="">
+                //                         </div>
+                //                         <div style="position:absolute; top:2px; right:65px; text-align:right; color:gray; line-height:30px;">
+                //                             <b><a class="spec_list_name nanum" style="color:black;">${idlist[0]}</a></b>
+                //                         </div>
+                //                     </div>
+                //                     <div id="spec_s_l1"
+                //                          style="width:100%; height:43px; position:relative; border-top: 1px solid #eee;">
+                //                         <div style="position:absolute; width:8px; height:40px; top:1px; right:-10px;">
+                //                         </div>
+                //                         <div class="show_spec_rune tipsy_live"
+                //                              style="position:absolute; top:0px; right:0px;">
+                //                             <img src=${champImgList[1]} width="40" alt="">
+                //                         </div>
+                //                         <div style="position:absolute; top:2px; right:65px; text-align:right; color:gray; line-height:30px;">
+                //                             <b><a class="spec_list_name nanum" style="color:black;">${idlist[1]}</a></b>
+                //                         </div>
+                //                     </div>
+                //                     <div id="spec_s_l1"
+                //                          style="width:100%; height:43px; position:relative; border-top: 1px solid #eee;">
+                //                         <div style="position:absolute; width:8px; height:40px; top:1px; right:-10px;">
+                //                         </div>
+                //                         <div class="show_spec_rune tipsy_live"
+                //                              style="position:absolute; top:0px; right:0px;">
+                //                             <img src=${champImgList[2]} width="40" alt="">
+                //                         </div>
+                //                         <div style="position:absolute; top:2px; right:65px; text-align:right; color:gray; line-height:30px;">
+                //                             <b><a class="spec_list_name nanum" style="color:black;">${idlist[2]}</a></b>
+                //                         </div>
+                //                     </div>
+                //                     <div id="spec_s_l1"
+                //                          style="width:100%; height:43px; position:relative; border-top: 1px solid #eee;">
+                //                         <div style="position:absolute; width:8px; height:40px; top:1px; right:-10px;">
+                //                         </div>
+                //                         <div class="show_spec_rune tipsy_live"
+                //                              style="position:absolute; top:0px; right:0px;">
+                //                             <img src=${champImgList[3]} width="40" alt="">
+                //                         </div>
+                //                         <div style="position:absolute; top:2px; right:65px; text-align:right; color:gray; line-height:30px;">
+                //                             <b><a class="spec_list_name nanum" style="color:black;">${idlist[3]}</a></b>
+                //                         </div>
+                //                     </div>
+                //                     <div id="spec_s_l1"
+                //                          style="width:100%; height:43px; position:relative; border-top: 1px solid #eee;">
+                //                         <div style="position:absolute; width:8px; height:40px; top:1px; right:-10px;">
+                //                         </div>
+                //                         <div class="show_spec_rune tipsy_live"
+                //                              style="position:absolute; top:0px; right:0px;">
+                //                             <img src=${champImgList[4]} width="40" alt="">
+                //                         </div>
+                //                         <div style="position:absolute; top:2px; right:65px; text-align:right; color:gray; line-height:30px;">
+                //                             <b><a class="spec_list_name nanum" style="color:black;">${idlist[4]}</a></b>
+                //                         </div>
+                //                     </div>
+                //                 </td>
+                //             </tr>
+                //             </tbody>
+                //         </table>
+                //     </div>
+                //     <div style="width: 50%; float:right">
+                //         <table style="width:70%; table-layout:fixed; margin-left: auto; margin-right: 20%; border: 5px solid;"
+                //                id="on_game">
+                //             <tbody>
+                //             </td>
+                //             <td style="background-color:#EDF;">
+                //                 <div style="width:100%; height:20px; position:relative; border-top: 1px solid #eee; background-color: #ff4343">
+                //                 </div>
+                //                 <div id="spec_s_r1"
+                //                      style="width:100%; height:43px; position:relative; border-top: 1px solid #eee;">
+                //                     <div style="position:absolute; width:8px; height:40px; top:1px; left:-10px;">
+                //                     </div>
+                //                     <div class="show_spec_rune tipsy_live"
+                //                          style="position:absolute; top:0px; left:0px;" original-title="">
+                //                         <img src=${champImgList[5]} width="40" alt="">
+                //                     </div>
+                //                     <div style="position:absolute; top:2px; left:65px; color:gray; line-height:30px;">
+                //                         <b><a class="spec_list_name nanum" style="color:black;">${idlist[5]}</a></b><br>
+                //                     </div>
+                //                 </div>
+                //                 <div id="spec_s_r1"
+                //                      style="width:100%; height:43px; position:relative; border-top: 1px solid #eee;">
+                //                     <div style="position:absolute; width:8px; height:40px; top:1px; left:-10px;">
+                //                     </div>
+                //                     <div class="show_spec_rune tipsy_live"
+                //                          style="position:absolute; top:0px; left:0px;" original-title="">
+                //                         <img src=${champImgList[6]} width="40" alt="">
+                //                     </div>
+                //                     <div style="position:absolute; top:2px; left:65px; color:gray; line-height:30px;">
+                //                         <b><a class="spec_list_name nanum" style="color:black;">${idlist[6]}</a></b><br>
+                //                     </div>
+                //                 </div>
+                //                 <div id="spec_s_r1"
+                //                      style="width:100%; height:43px; position:relative; border-top: 1px solid #eee;">
+                //                     <div style="position:absolute; width:8px; height:40px; top:1px; left:-10px;">
+                //                     </div>
+                //                     <div class="show_spec_rune tipsy_live"
+                //                          style="position:absolute; top:0px; left:0px;" original-title="">
+                //                         <img src=${champImgList[7]} width="40" alt="">
+                //                     </div>
+                //                     <div style="position:absolute; top:2px; left:65px; color:gray; line-height:30px;">
+                //                         <b><a class="spec_list_name nanum" style="color:black;">${idlist[7]}</a></b><br>
+                //                     </div>
+                //                 </div>
+                //                 <div id="spec_s_r1"
+                //                      style="width:100%; height:43px; position:relative; border-top: 1px solid #eee;">
+                //                     <div style="position:absolute; width:8px; height:40px; top:1px; left:-10px;">
+                //                     </div>
+                //                     <div class="show_spec_rune tipsy_live"
+                //                          style="position:absolute; top:0px; left:0px;" original-title="">
+                //                         <img src=${champImgList[8]} width="40" alt="">
+                //                     </div>
+                //                     <div style="position:absolute; top:2px; left:65px; color:gray; line-height:30px;">
+                //                         <b><a class="spec_list_name nanum" style="color:black;">${idlist[8]}</a></b><br>
+                //                     </div>
+                //                 </div>
+                //                 <div id="spec_s_r1"
+                //                      style="width:100%; height:43px; position:relative; border-top: 1px solid #eee;">
+                //                     <div style="position:absolute; width:8px; height:40px; top:1px; left:-10px;">
+                //                     </div>
+                //                     <div class="show_spec_rune tipsy_live"
+                //                          style="position:absolute; top:0px; left:0px;" original-title="">
+                //                         <img src=${champImgList[9]} width="40" alt="">
+                //                     </div>
+                //                     <div style="position:absolute; top:2px; left:65px; color:gray; line-height:30px;">
+                //                         <b><a class="spec_list_name nanum" style="color:black;">${idlist[9]}</a></b><br>
+                //                     </div>
+                //                 </div>
+                //             </td>
 
-        //             </tbody>
-        //         </table>
-        //     </div>
-        //     <div> &nbsp;</div>
-        //     <div> &nbsp;</div>
-        //     <div> &nbsp;</div>
-        //     <div style="text-align: center" id="progressbar">
-        //         <progress id="file" max="100" value="${win_rate}" style="width: 85%; height: 15px;"></progress>
-        //     </div>
-        // </div>`
-        //         $('div').remove("#analyze_text")
-        //         $('div').remove("#analyze_text_error")
-        //         $("div").remove("#on_game_data")
-        //         $("table").remove("#on_game")
-        //         $("div").remove("#user_defined_game")
-        //         $('#container_main').append(html)
-        //     },
+                //             </tbody>
+                //         </table>
+                //     </div>
+                //     <div> &nbsp;</div>
+                //     <div> &nbsp;</div>
+                //     <div> &nbsp;</div>
+                //     <div style="text-align: center" id="progressbar">
+                //         <progress id="file" max="100" value="${win_rate}" style="width: 85%; height: 15px;"></progress>
+                //     </div>
+                // </div>`
+                //         $('div').remove("#analyze_text")
+                //         $('div').remove("#analyze_text_error")
+                //         $("div").remove("#on_game_data")
+                //         $("table").remove("#on_game")
+                //         $("div").remove("#user_defined_game")
+                //         $('#container_main').append(html)
+                //     },
             },
             error: function (request, status, error) {
                 $('div').remove("#analyze_text")

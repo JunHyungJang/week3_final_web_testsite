@@ -159,14 +159,14 @@ def getChampionData(soupfow, xData, yData):
 
 
 users = list()
-for i in range(1,3): #한 페이지당 100명 유저 -> 1페이지부터 시작함.
+for i in range(100,150): #한 페이지당 100명 유저 -> 1페이지부터 시작함.
   soupUser = getUsersUrl(i)
   users = getUsers(soupUser, users)
 print(users)
 
 xData = list()
 yData = list()
-for i in range(0,50): #사람 인원 수 설정 -> 한 사람당 20개 데이터 수집 가능함.
+for i in range(0,500): #사람 인원 수 설정 -> 한 사람당 20개 데이터 수집 가능함.
   print("랭킹",i+1,"위:",users[i])
   soupfow = getChampionUrl(users[i])
   data = getChampionData(soupfow, xData, yData)
@@ -188,7 +188,7 @@ model.add(Dense(2, activation = 'softmax'))
 model.compile(loss='categorical_crossentropy', optimizer='sgd', metrics=['accuracy'])
 model.summary()
 
-hist = model.fit(x,y,epochs = 100)
+hist = model.fit(x,y,epochs = 20)
 results = model.evaluate(x,y)
 print(results)
 
@@ -196,4 +196,4 @@ x_test= np.array([[112,31,90,132,102,142,83,101,111,73]])
 y_predict = model.predict(x_test)
 print(y_predict)
 print("당신이 승리할 확률은 {0}% 입니다".format(y_predict[0][1] * 100))
-model.save("Analysis.h5")
+model.save("Analysis_10_final.h5")
