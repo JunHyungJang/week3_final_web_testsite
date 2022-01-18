@@ -19,6 +19,45 @@ LOL 승률 예측
   <li>Back-End -> Django, djangorestframework </li>
 </ul>
 
+## Deep Learning
+승률예측을 하기 위해서 input으로 받은 인자는, 상대편 우리편 챔피언 10개의 값과 각 유저의 승률 10개 총 20개의 데이터 받았다.
+각 챔피언들의 이름은 자연수 값으로 매핑되어있고, 승률은 승률 그대로 받아서 numpy array에 값을 넣었다.
+가장 일반적인 3-layer NN으로 학습이 가능하다고 판단하여서 Keras tool을 이용하여 모델링을 하였다.
+```python
+
+model = Sequential()
+model.add(Dense(32, activation = 'relu', input_shape= (20,)))
+model.add(Dense(10, activation = 'relu'))
+model.add(Dense(2, activation = 'softmax'))
+model.compile(loss='categorical_crossentropy', optimizer='sgd', metrics=['accuracy'])
+model.summary()
+model.fit(x,y,epochs = 15)
+```
+Train data set은 16000개 이고 15 epochs로 학습을 진행하였다.
+output에 softmax를 적용한뒤 crossentropy의 미분을 사용하여 나온 gradient 값의 미분값을 통해 weight 값들을 update 시켜나갔다.
+
+
+## Data
+<ul>
+  <li>Artificial Intelligenc -> Deep Learning -> Neural Network</li>
+  <li>Data -> Crawling -> OP.GG</li>
+  <li>Front-End -> Html, Css, Javascript </li>
+  <li>Back-End -> Django, djangorestframework </li>
+</ul>
+
+
+## Fron-End
+<ul>
+  <li>Artificial Intelligenc -> Deep Learning -> Neural Network</li>
+  <li>Data -> Crawling -> OP.GG</li>
+  <li>Front-End -> Html, Css, Javascript </li>
+  <li>Back-End -> Django, djangorestframework </li>
+</ul>
+
+## Back-End
+Django와 sqlite를 이용하여 서버와 데이터 베이스를 구축하였다.
+AbstractUser class를 import하여 로그인, 회원가입 그리고 게시판에 글쓰는 기능을 구현하였다.
+
 ## Details
 <ul>
   <li>Neural Network </li>
@@ -26,7 +65,6 @@ LOL 승률 예측
   <li>Data Structure: 10*1(Champion / Result), 20*1(Champion, Win Rate / Result) </li>
   <li>Front-End -> Bootstrap template 활용, op.gg 및 fow.kr 디자인 참고, front-back 통신에 jquery활용</li>
   <li>Back-End -> Keras 를 이용한 3-layer nn 모델을 만들어서 15 epoch 16843개의 dataset를 학습시킴</li>
- 
 </ul>
 
 ## Contributers
