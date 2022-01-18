@@ -25,7 +25,8 @@ LOL 승률 예측
   <li>Crawling: Python(BeautifulSoup & Selenium), Site(op.gg), Dataset -> 16843개(10*1), 868개(20*1)</li>
   <li>Data Structure: 10*1(Champion / Result), 20*1(Champion, Win Rate / Result) </li>
   <li>Front-End -> Bootstrap template 활용, op.gg 및 fow.kr 디자인 참고, front-back 통신에 jquery활용</li>
-  <li>Back-End</li>
+  <li>Back-End -> Keras 를 이용한 3-layer nn 모델을 만들어서 15 epoch 16843개의 dataset를 학습시킴</li>
+ 
 </ul>
 
 ## Contributers
