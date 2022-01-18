@@ -15,8 +15,8 @@ LOL 승률 예측
 <ul>
   <li>Artificial Intelligenc -> Deep Learning -> Neural Network</li>
   <li>Data -> Crawling -> OP.GG</li>
-  <li>Front-End</li>
-  <li>Back-End</li>
+  <li>Front-End -> Html, Css, Javascript </li>
+  <li>Back-End -> Django, djangorestframework </li>
 </ul>
 
 ## Details
@@ -24,11 +24,11 @@ LOL 승률 예측
   <li>Neural Network </li>
   <li>Crawling: Python(BeautifulSoup & Selenium), Site(op.gg), Dataset -> 16843개(10*1), 868개(20*1)</li>
   <li>Data Structure: 10*1(Champion / Result), 20*1(Champion, Win Rate / Result) </li>
-  <li>Front-End </li>
-  <li>Back-End </li>
+  <li>Front-End -> Bootstrap template 활용, op.gg 및 fow.kr 디자인 참고, front-back 통신에 jquery활용</li>
+  <li>Back-End</li>
 </ul>
 
 ## Contributers
 - [장준형](https://github.com/JunHyungJang)
-- [박정웅](https://github.com/)
+- [박정웅](https://github.com/yeolia327)
 - [김수민](https://github.com/SeanKim37)
