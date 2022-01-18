@@ -20,7 +20,7 @@ from django.urls import path, include
 # from django.conf.urls.static import static
 from django.conf import settings
 from django.conf.urls.static import static
-from users.views import on_game, model_calculate, champNametoImage
+from users.views import on_game, model_calculate, champNametoImage, on_game20, model_calculate20
 urlpatterns = [
     path('admin/', admin.site.urls),
     # path('', include('post.urls')),

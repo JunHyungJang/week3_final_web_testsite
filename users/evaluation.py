@@ -47,7 +47,7 @@ champion_name = [
     'Pyke', 'Pantheon', 'Fiddlesticks', 'Fiora', 'Fizz', 'Heimerdinger', 'Hecarim'
 ]
 
-model = load_model('Analysis_10_final_2.h5')
+model = load_model('Analysis_10_final_5.h5')
 
 def calculate(datalist):
     x_test = 0

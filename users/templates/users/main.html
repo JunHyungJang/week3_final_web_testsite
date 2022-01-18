@@ -853,7 +853,7 @@
     })
 
     $('#search_button').click(function () {
-        console.log("clicked")
+        console.log("clicked gg!")
         console.log($('#emailAddress').val())
 
         let fd = new FormData();
@@ -876,6 +876,7 @@
             processData: false,
             contentType: false,
             success: function (data) {
+                console.log("userId call success received")
                 idlist = data[0];
                 champlist = data[1];
                 champImgList = data[2];
@@ -1268,7 +1269,7 @@
                 var text_error = '<div class="text-center text-white" id="analyze_text_error"> <div>&nbsp;</div> <div>&nbsp;</div> <div>&nbsp;</div> <div>&nbsp;</div> <div>&nbsp;</div> <h3 class="mb-5">게임 중이 아닙니다</h3> </div>'
                 $('#container_main').append(text_error)
 
-                console.log("error");
+                console.log("error why..?");
             },
             complete: function () {
                 console.log("complete")

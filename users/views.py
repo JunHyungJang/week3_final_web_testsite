@@ -1,4 +1,5 @@
 from http.client import HTTPResponse
+import imp
 from django.shortcuts import render
 from django.contrib.auth import authenticate, login, logout
 from django.shortcuts import redirect
@@ -8,10 +9,13 @@ from .models import *
 from django.http import HttpResponseRedirect,  Http404
 from django.views.decorators.csrf import csrf_exempt
 from testsite.on_game_data import ingameOPGG
+from testsite.on_game_data20 import getGameData20
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from .evaluation import calculate
 from .imageconverter import convert
+from .evaluation20 import calculate20
+import time
 
 # Create your views here.
 
@@ -23,6 +27,18 @@ class model_calculate(APIView):
         win_rate = calculate(data.split(','))
         print(win_rate)
         return Response(status=200, data=win_rate)
+
+class model_calculate20(APIView):
+    def post(self, request):
+        print("reach here1")
+        data_champ = request.data.get('champlist')
+        data_winrate = request.data.get('winrate')
+        print(data_champ)
+        print(data_winrate)
+        # print(data.split(','))
+        win_rate = calculate20(data_champ.split(','), data_winrate.split(','))
+        return Response(status=200, data=win_rate)
+
 
 class champNametoImage(APIView):
     def post(self, request):
@@ -53,6 +69,30 @@ class on_game(APIView):
             print(idlist)
             print(champlist)
             return Response(status=200, data=[idlist, champlist, imgList])
+
+class on_game20(APIView):
+    def post(self, request):
+        userId = request.data.get('userId')
+        # renewalOPGG(userId)
+        print("on_game20 start")
+        userOnGameData = getGameData20(userId)
+        time.sleep(7)
+        print("getGameDate20 finished")
+        print(userOnGameData)
+        idlist = []
+        champlist = []
+
+        if (len(userOnGameData['Names']) == 0):
+            print("게임중이 아닙니다")
+            return Response(status=404)
+        else:
+            idlist = userOnGameData['Names']
+            champlist = userOnGameData['Champions']
+            imgList = userOnGameData['Champion Images']
+            winrate = userOnGameData['Winrate']
+            print(idlist)
+            print(champlist)
+            return Response(status=200, data=[idlist, champlist, imgList, winrate])
 
 def main(request):
     user_id = request.session.get('user')
